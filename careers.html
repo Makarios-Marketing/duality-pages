@@ -84,6 +84,22 @@ section.apply{background:var(--dark);color:var(--cream)}
 .closing h2{font-size:clamp(30px,3.6vw,46px);margin:18px auto 16px;max-width:16ch}
 .closing p{color:#5c554c;max-width:34em;margin:0 auto 10px;font-size:17px}
 .closing .ph{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--bronze);margin-top:6px}
+/* hiring steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:50px;counter-reset:st}
+.stepc{position:relative;padding-top:54px}
+.stepc::before{counter-increment:st;content:"0" counter(st);position:absolute;top:0;left:0;font-family:'Playfair Display',serif;font-style:italic;font-size:40px;color:var(--gold)}
+.stepc h4{font-family:'Jost',sans-serif;font-weight:600;font-size:17px;letter-spacing:.02em;margin-bottom:8px}
+.stepc p{color:#5c554c;font-size:15px;line-height:1.6}
+/* faq */
+.faq{max-width:820px;margin-top:40px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:22px 46px 22px 0;position:relative;font-family:'Playfair Display',serif;font-weight:600;font-size:21px;color:var(--dark)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:20px;font-size:26px;color:var(--bronze);font-family:'Jost',sans-serif;line-height:1}
+.faq details[open] summary::after{content:"\2013"}
+.faq .fa{padding:0 46px 24px 0;color:#5c554c;font-size:16px;line-height:1.7}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr;gap:34px 26px}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
 @media(max-width:900px){.wrap{padding:0 22px}.nav{display:none}.split,.fit-grid,.form-grid{grid-template-columns:1fr;gap:34px}.cards{grid-template-columns:1fr}.split img,.fit-grid img{height:360px}.frow{grid-template-columns:1fr}section{padding:70px 0}}
 </style></head>
 <body>
@@ -147,6 +163,27 @@ section.apply{background:var(--dark);color:var(--cream)}
       <a class="btn btn-ghost" href="#apply" style="margin-top:34px">Start Your Application &rarr;</a>
     </div>
     <img src="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-1.jpg" alt="The Duality Salon team in the Williamsville salon">
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><span class="eyebrow">How to Join</span><h2>From hello to your <em>first day</em></h2><p>No drawn-out process. Here is how it usually goes once you reach out.</p></div>
+  <div class="steps">
+    <div class="stepc"><h4>Apply</h4><p>Send us a little about yourself and a link to your work. It only takes a few minutes.</p></div>
+    <div class="stepc"><h4>Come Meet Us</h4><p>We grab coffee, show you around the salon, and introduce you to Sue, Leah, and the team.</p></div>
+    <div class="stepc"><h4>A Day Behind the Chair</h4><p>Spend a little time with us so it feels like the right fit for you as much as for us.</p></div>
+    <div class="stepc"><h4>Welcome In</h4><p>We get you set up and help you start building your book from day one.</p></div>
+  </div>
+</div></section>
+
+<section style="background:var(--cream2)"><div class="wrap">
+  <div class="shead"><span class="eyebrow">Good to Know</span><h2>Questions before you <em>apply</em></h2></div>
+  <div class="faq">
+    <details open><summary>Do I need to bring my own clients?</summary><div class="fa">No. We help you grow a loyal book in a salon that people in Williamsville already know and trust. Walk-ins and referrals come through the door, and we support you in building from there.</div></details>
+    <details><summary>Is this booth rental or a team salon?</summary><div class="fa">A team salon. We are looking for stylists who want to grow with us, not just rent a chair. You are part of the team, with real support behind you.</div></details>
+    <details><summary>Do you hire newly licensed or soon-to-be-licensed stylists?</summary><div class="fa">Yes. If you are a licensed cosmetologist in New York State, or about to be, we would love to meet you. Mentorship from our senior stylists is part of how we work here.</div></details>
+    <details><summary>What is the schedule like?</summary><div class="fa">We are open Monday through Saturday by appointment, and we protect your schedule rather than overbooking it, so you have the time to do your best work on every client.</div></details>
+    <details><summary>What happens after I apply?</summary><div class="fa">We reach out to set up a time to meet, show you around, and talk through the chair. If it feels like a fit on both sides, we go from there.</div></details>
   </div>
 </div></section>
 
