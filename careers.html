@@ -5,7 +5,8 @@
 <style>
 :root{--dark:#161412;--dark2:#1f1b18;--cream:#f8f4ee;--cream2:#efe8dc;--bronze:#8c6d43;--gold:#c9af86;--muted:#8a8178;--line:rgba(140,109,67,.28)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Jost',sans-serif;color:var(--dark);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.7}
+body{font-family:'Jost',sans-serif;color:var(--dark);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
+img{max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.1}
 em{font-style:italic}
@@ -101,6 +102,36 @@ section.apply{background:var(--dark);color:var(--cream)}
 @media(max-width:820px){.steps{grid-template-columns:1fr 1fr;gap:34px 26px}}
 @media(max-width:520px){.steps{grid-template-columns:1fr}}
 @media(max-width:900px){.wrap{padding:0 22px}.nav{display:none}.split,.fit-grid,.form-grid{grid-template-columns:1fr;gap:34px}.cards{grid-template-columns:1fr}.split img,.fit-grid img{height:360px}.frow{grid-template-columns:1fr}section{padding:56px 0}.hero{min-height:460px}}
+@media(max-width:560px){
+  .wrap{padding:0 20px}
+  section{padding:48px 0}
+  .hero{min-height:auto}
+  .hero-in{padding:46px 0 42px}
+  .hero h1{font-size:30px;line-height:1.14;margin:14px 0 14px}
+  .hero p{font-size:16px;max-width:100%;margin-bottom:22px}
+  .hero .cta{gap:10px}
+  .hero .cta .btn{flex:1 1 auto;justify-content:center;padding:15px 20px}
+  .hero .stats{flex-wrap:wrap;gap:18px 26px;margin-top:26px;padding-top:20px}
+  .hero .stats b{font-size:22px}
+  .hero .stats span{font-size:10px;letter-spacing:.12em}
+  .shead h2,.form-grid .intro h2,.closing h2{font-size:26px}
+  .shead p{font-size:15px}
+  .eyebrow{letter-spacing:.2em;font-size:11px}
+  .eyebrow::before{width:24px}.eyebrow.c::after{width:24px}
+  .cards{gap:18px}
+  .card{padding:32px 26px 30px}
+  .card .num{font-size:48px}
+  .split img,.fit-grid img{height:260px}
+  .steps{gap:30px}
+  .stepc{padding-top:48px}
+  .stepc::before{font-size:36px}
+  .faq summary{font-size:18px;padding:18px 36px 18px 0}
+  .faq summary::after{top:16px;font-size:22px}
+  .faq .fa{padding-right:0}
+  .form{padding:30px 22px}
+  .field label{font-size:11px}
+  .closing h2{max-width:100%}
+}
 /* ======= motion / wow factor ======= */
 .card{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
 .card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 26px 54px -32px rgba(22,20,18,.55)}
