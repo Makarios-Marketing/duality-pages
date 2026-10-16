@@ -240,11 +240,11 @@ section.apply{background:var(--dark);color:var(--cream)}
 (function(){
   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   document.documentElement.classList.add('js-anim');
-  var sel='.hero .eyebrow,.hero h1,.hero p,.hero .cta,.hero .stats,.shead,.split .imgwrap,.vlist li,.cards .card,.fit-grid .checks,.fit-grid>img,.steps .stepc,.faq details,.form-grid .intro,.form,.closing .eyebrow,.closing h2,.closing p,.closing .ph';
+  var sel='.hero .eyebrow,.hero h1,.hero p,.hero .cta,.hero .stats,.cards .card';
   var els=[].slice.call(document.querySelectorAll(sel));
   els.forEach(function(el){el.classList.add('reveal');});
   function stagger(parent,child){[].forEach.call(document.querySelectorAll(parent),function(p){[].forEach.call(p.querySelectorAll(child),function(c,i){c.style.transitionDelay=(i*0.09)+'s';});});}
-  stagger('.cards','.card');stagger('.vlist','li');stagger('.steps','.stepc');stagger('.faq','details');
+  stagger('.cards','.card');
   // hero cascade
   var hero=['.hero .eyebrow','.hero h1','.hero p','.hero .cta','.hero .stats'];
   hero.forEach(function(s,i){var e=document.querySelector(s);if(e)e.style.transitionDelay=(i*0.1)+'s';});
