@@ -113,8 +113,9 @@
   .hero{position:relative;min-height:620px;display:flex;align-items:center;color:var(--ivory);
     background:linear-gradient(90deg,rgba(18,16,14,.93) 0%,rgba(18,16,14,.72) 48%,rgba(18,16,14,.40) 100%),
     url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-1.jpg') center 24%/cover no-repeat;}
-  .hero .in{max-width:660px;padding:88px 0 76px;}
-  .hero h1{font-size:clamp(2.6rem,5.3vw,4.3rem);color:#fff;margin:18px 0 0;}
+  .hero .in{max-width:780px;padding:88px 0 76px;}
+  .hero h1{font-size:clamp(2.1rem,4vw,3.3rem);color:#fff;margin:18px 0 0;}
+  @media(min-width:721px){.hero h1{white-space:nowrap;}}
   .hero h1 em{color:var(--brass-lt);}
   .hero .rule{margin-top:22px;}
   .hero .lede{margin-top:24px;max-width:48ch;color:#e6ded3;font-size:1.12rem;}
@@ -122,6 +123,11 @@
   .hero .stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:38px;border-top:1px solid rgba(201,175,134,.3);padding-top:24px;}
   .hero .stats b{font-family:var(--serif);font-weight:500;font-size:1.7rem;color:#fff;display:block;line-height:1.1;}
   .hero .stats span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-lt);}
+  /* hero sophistication — inset frame + vertical salon label */
+  .hero::after{content:"";position:absolute;inset:22px;border:1px solid rgba(201,175,134,.26);pointer-events:none;z-index:1;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-vlabel{position:absolute;right:34px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--brass-lt);opacity:.82;z-index:2;}
+  @media(max-width:900px){.hero::after{inset:14px;}.hero-vlabel{display:none;}}
   @media(max-width:900px){.hero{min-height:480px;}}
   @media(max-width:560px){.hero{min-height:auto;}.hero .in{padding:56px 0 48px;}.hero h1{font-size:2rem;}.hero .stats{gap:18px 30px;}.hero .acts .btn{flex:1 1 auto;}}
 
@@ -309,6 +315,7 @@
 </svg>
 
 <header class="hero">
+  <span class="hero-vlabel">Duality Salon &middot; Williamsville, NY</span>
   <div class="wrap">
     <div class="in">
       <span class="eyebrow lt">Haircuts &middot; Williamsville, NY</span>
