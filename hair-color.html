@@ -321,10 +321,14 @@
   #services .svc .flag{position:static;grid-column:2;grid-row:3;justify-self:start;margin-top:14px;}
   #services .svc p{grid-column:3;grid-row:1/6;align-self:center;margin:0;font-size:1.02rem;}
   @media(max-width:760px){#services .svc{grid-template-columns:48px 1fr;}#services .svc p{grid-column:1/3;grid-row:auto;margin-top:12px;}#services .svc h3,#services .svc .price,#services .svc .flag{grid-column:2;grid-row:auto;}}
-  /* approach: image LEFT, text right, full-width image */
-  #approach .split{grid-template-columns:1.1fr 1.15fr;gap:56px;}
-  #approach .split > div{order:2;}
-  #approach .approach-img{order:1;max-width:100%;justify-self:stretch;height:520px;object-fit:cover;}
+  /* approach: layered two-image collage (wow factor) */
+  #approach .split{grid-template-columns:1.05fr .95fr;gap:76px;align-items:center;}
+  #approach .appcollage{order:1;position:relative;}
+  #approach .apptext{order:2;}
+  #approach .app-main{display:block;width:100%;height:580px;object-fit:cover;box-shadow:0 46px 84px -48px rgba(22,20,18,.52);outline:1px solid rgba(201,175,134,.5);outline-offset:-12px;}
+  #approach .app-accent{position:absolute;right:-40px;bottom:-40px;width:238px;height:300px;object-fit:cover;object-position:50% 30%;border:7px solid var(--ivory);box-shadow:0 34px 56px -26px rgba(22,20,18,.55);}
+  #approach .app-badge{position:absolute;top:30px;left:-18px;z-index:2;background:var(--ink);color:#fff;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;padding:13px 22px;}
+  @media(max-width:760px){#approach .split{gap:40px;}#approach .app-main{height:360px;}#approach .app-accent{width:150px;height:190px;right:-16px;bottom:-24px;}#approach .app-badge{left:0;}}
   /* why: two columns with left brass rule */
   #why .why{grid-template-columns:repeat(2,1fr);gap:42px 64px;}
   #why .why .it{border-top:0;border-left:2px solid var(--brass);padding:6px 0 6px 26px;}
@@ -384,7 +388,12 @@
 
 <section id="approach">
   <div class="wrap split">
-    <div>
+    <div class="appcollage">
+      <img class="app-main" src="https://dualitysalonbuffalo.com/wp-content/uploads/2020/06/AdobeStock_164034418-1-scaled.jpeg" alt="Platinum blonde color result at Duality Salon in Williamsville, NY" loading="lazy">
+      <img class="app-accent" src="https://dualitysalonbuffalo.com/wp-content/uploads/2021/01/AdobeStock_128903830-scaled.jpeg" alt="A Duality stylist working color through a client's hair" loading="lazy">
+      <span class="app-badge">Color, start to finish</span>
+    </div>
+    <div class="apptext">
       <span class="eyebrow">The approach</span>
       <h2>Color built around your hair, <em>not</em> a swatch book</h2>
       <hr class="rule">
@@ -395,7 +404,6 @@
         <a class="btn btn-ghost" href="tel:17169988528">Call 716 998 8528</a>
       </div>
     </div>
-    <img class="approach-img" src="https://dualitysalonbuffalo.com/wp-content/uploads/2020/06/AdobeStock_334299065-scaled.jpeg" alt="Dimensional balayage color with soft waves at Duality Salon, Williamsville NY" loading="lazy">
   </div>
 </section>
 
