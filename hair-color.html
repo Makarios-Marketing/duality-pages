@@ -357,8 +357,6 @@
   /* ===== MOTION LAYER (only active when html.mo is set; off for reduced-motion) ===== */
   :root{--mo-ease:cubic-bezier(.16,1,.3,1);--mo-ease-io:cubic-bezier(.77,0,.18,1);}
   @media (prefers-reduced-motion:no-preference){
-    /* reading progress */
-    html.mo .mo-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:9999;background:linear-gradient(90deg,var(--brass),var(--brass-lt),#f3e3c4);transform-origin:0 50%;transform:scaleX(var(--p,0));pointer-events:none;}
 
     /* HERO: photo on its own layer for slow zoom + parallax */
     html.mo .hero{background:#0d0b09;overflow:hidden;isolation:isolate;}
@@ -398,7 +396,6 @@
     html.mo .mo-eb.in::before,html.mo .mo-go .mo-eb::before{transform:rotate(45deg) scale(1);}
     /* brass rules draw left to right */
     html.mo .mo-line{transform:scaleX(0);transform-origin:0 50%;transition:transform 1.4s var(--mo-ease) var(--d,0s);}
-    html.mo .centered .mo-line,html.mo .cta-band .mo-line{transform-origin:50% 50%;}
     html.mo .mo-line.in,html.mo .mo-go .mo-line{transform:scaleX(1);}
     /* image unveil: clip curtain + settle zoom */
     html.mo .mo-clip{clip-path:inset(100% 0 0 0);scale:1.12;transition:clip-path 1.5s var(--mo-ease-io) var(--d,0s),scale 2.2s var(--mo-ease) var(--d,0s);}
@@ -412,41 +409,11 @@
     html.mo .app-badge.mo-slide{opacity:0;transform:translate3d(-40px,0,0);transition:opacity .9s ease .9s,transform 1.2s var(--mo-ease) .9s;}
     html.mo .in .app-badge.mo-slide{opacity:1;transform:none;}
 
-    /* service rows: divider draws across, then content rises */
-    html.mo #services .svc{border-top-color:transparent;}
-    html.mo #services .svc::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--brass),var(--line) 40%);transform:scaleX(0);transform-origin:0 50%;transition:transform 1.6s var(--mo-ease) var(--d,0s);}
-    html.mo #services .svc.in::before{transform:scaleX(1);}
-    html.mo #services .svc>*{opacity:0;transform:translate3d(0,26px,0);transition:opacity 1s var(--mo-ease),transform 1.2s var(--mo-ease);}
-    html.mo #services .svc.in>*{opacity:1;transform:none;}
-    html.mo #services .svc.in>:nth-child(1){transition-delay:calc(var(--d,0s) + .15s);}
-    html.mo #services .svc.in>:nth-child(2){transition-delay:calc(var(--d,0s) + .25s);}
-    html.mo #services .svc.in>:nth-child(3){transition-delay:calc(var(--d,0s) + .35s);}
-    html.mo #services .svc.in>:nth-child(4){transition-delay:calc(var(--d,0s) + .45s);}
-    html.mo #services .svc.in>:nth-child(n+5){transition-delay:calc(var(--d,0s) + .55s);}
-    html.mo #services .svc .flag{transition:opacity 1s ease,transform 1.2s var(--mo-ease),background .3s;}
 
-    /* why items: brass top border draws */
-    html.mo .why .it{border-top-color:transparent;position:relative;}
-    html.mo .why .it::before{content:"";position:absolute;top:-2px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--brass),var(--brass-lt));transform:scaleX(0);transform-origin:0 50%;transition:transform 1.3s var(--mo-ease) var(--d,0s);}
-    html.mo .why .it.in::before{transform:scaleX(1);}
 
-    /* steps: big numerals drop into place */
-    html.mo .step .no{opacity:0;transform:translate3d(0,-24px,0);transition:opacity 1s ease calc(var(--d,0s) + .15s),transform 1.3s var(--mo-ease) calc(var(--d,0s) + .15s);}
-    html.mo .step.in .no{opacity:1;transform:none;}
 
-    /* reviews: quote mark scales in */
-    html.mo .rev .q{display:block;transform:scale(.4);opacity:0;transform-origin:0 60%;transition:transform 1.2s var(--mo-ease) calc(var(--d,0s) + .3s),opacity .8s ease calc(var(--d,0s) + .3s);}
-    html.mo .rev.in .q{transform:none;opacity:1;}
 
-    /* trust bar stars twinkle in */
-    html.mo .trustbar .stars{background:linear-gradient(90deg,var(--brass) 50%,rgba(140,109,67,.15) 50%);background-size:200% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;transition:background-position 1.6s var(--mo-ease) .4s;}
-    html.mo .trustbar.in .stars{background-position:0 0;}
 
-    /* mid CTA band: slow sheen pass when it arrives */
-    html.mo .midcta{position:relative;overflow:hidden;}
-    html.mo .midcta::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:35%;background:linear-gradient(100deg,transparent,rgba(255,246,228,.22),transparent);transform:skewX(-18deg) translateX(-120%);pointer-events:none;}
-    html.mo .midcta.in::after{animation:moSheen 2.2s var(--mo-ease) .5s 1 both;}
-    @keyframes moSheen{to{transform:skewX(-18deg) translateX(520%);}}
 
     /* wide salon band: parallax */
     html.mo .wideband{background-size:cover!important;background-position:center calc(50% + var(--py,0px))!important;}
@@ -1012,47 +979,22 @@
   },{threshold:.16,rootMargin:'0px 0px -6% 0px'}):null;
   function watch(el){if(!el)return;if(io)io.observe(el);else el.classList.add('in');}
 
-  $$('section .head, #approach .apptext, .cta-band .wrap, .band-ink.centered .wrap').forEach(function(h){
-    var t=0,eb=h.querySelector('.eyebrow');
-    if(eb){tag(eb,'mo-eb',0);t=.15;}
-    var h2=h.querySelector('h2');if(h2){var n=split(h2,t,.06,false);t+=n*.06+.2;watch(h2);}
-    var r=h.querySelector('.rule');if(r){tag(r,'mo-line',t);watch(r);}
-    $$(':scope>p, :scope>.lead, :scope>.acts, :scope>.hours',h).forEach(function(p,k){tag(p,'mo-r',t+.1+k*.12);watch(p);});
-    if(eb)watch(eb);
-  });
-  $$('.head-row>.btn, .head-row>a').forEach(function(b){tag(b,'mo-r',.3);watch(b);});
-
   var col=document.querySelector('.appcollage');
   if(col){tag(col.querySelector('.app-main'),'mo-clip',0);watch(col.querySelector('.app-main'));
     var acc=col.querySelector('.app-accent');if(acc)acc.classList.add('mo-float');
     var bd=col.querySelector('.app-badge');if(bd)bd.classList.add('mo-slide');watch(col);}
-
-  $$('#services .svc').forEach(function(s,k){s.style.setProperty('--d',(k%2*.08)+'s');watch(s);});
-  $$('#services .svcs ~ *').forEach(function(x){tag(x,'mo-r',.1);watch(x);});
-  var mc=document.querySelector('.midcta');if(mc){$$('.t, .acts',mc).forEach(function(x,k){tag(x,'mo-r',k*.18);watch(x);});watch(mc);}
-  $$('.why .it').forEach(function(x,k){tag(x,'mo-r',k*.13);watch(x);});
   $$('.gallery .gtile').forEach(function(x,k){tag(x,'mo-clip',k*.14);watch(x);});
-  $$('#work .acts, #team .acts, #process .acts, #faq .acts, #area .acts').forEach(function(x){tag(x,'mo-r',.15);watch(x);});
-  $$('.member').forEach(function(m,k){var p=m.querySelector('.pic');if(p){tag(p,'mo-clip',k%3*.14);watch(p);}
-    $$(':scope>*:not(.pic)',m).forEach(function(x,j){tag(x,'mo-r',k%3*.14+.35+j*.08);watch(x);});});
-  $$('.step').forEach(function(x,k){tag(x,'mo-r',k*.14);watch(x);});
-  $$('#area .city, #area .mapcard, #area iframe').forEach(function(x,k){tag(x,'mo-r',Math.min(k,8)*.07);watch(x);});
-  $$('.faq details').forEach(function(x,k){tag(x,'mo-r',k*.07);watch(x);});
-  $$('.rev').forEach(function(x,k){tag(x,'mo-r',k*.15);watch(x);});
-  $$('.trustbar').forEach(watch);
 
   /* safety net: anything still hidden after load + 4s near/above viewport gets revealed */
   window.addEventListener('load',function(){setTimeout(function(){
-    $$('.mo-r,.mo-clip,.mo-line,.mo-eb,.mo-fade,#services .svc,.why .it,.step,.rev,h2').forEach(function(el){
+    $$('.mo-clip,.appcollage').forEach(function(el){
       if(el.getBoundingClientRect().top<innerHeight*1.2)el.classList.add('in');});
   },4000);});
 
-  /* ---------- scroll-linked: progress bar + parallax ---------- */
-  var bar=document.createElement('div');bar.className='mo-progress';document.body.appendChild(bar);
+  /* ---------- scroll-linked parallax ---------- */
   var wb=document.querySelector('.wideband'),ticking=false;
   function onScroll(){
     var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
-    bar.style.setProperty('--p',h>0?(y/h).toFixed(4):0);
     if(hero&&y<innerHeight*1.2)hero.style.setProperty('--hy',(y*.28).toFixed(1)+'px');
     if(wb){var r=wb.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){wb.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)*-.22).toFixed(1)+'px');}}
     ticking=false;
