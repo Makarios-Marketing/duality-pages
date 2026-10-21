@@ -358,13 +358,6 @@
   :root{--mo-ease:cubic-bezier(.16,1,.3,1);--mo-ease-io:cubic-bezier(.77,0,.18,1);}
   @media (prefers-reduced-motion:no-preference){
 
-    /* HERO: photo on its own layer for slow zoom + parallax */
-    html.mo .hero{background:#0d0b09;overflow:hidden;isolation:isolate;}
-    html.mo .hero::before{content:"";position:absolute;inset:-8% 0;z-index:0;
-      background:linear-gradient(90deg,rgba(13,11,9,.93) 0%,rgba(15,13,11,.72) 48%,rgba(15,13,11,.4) 100%),
-      url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-3.jpg') center 42%/cover no-repeat;
-      translate:0 var(--hy,0px);scale:1.16;transition:scale 3.2s var(--mo-ease);will-change:translate,scale;}
-    html.mo .hero.mo-go::before{scale:1.04;}
     /* curtain wipe with a champagne leading edge */
     html.mo .mo-curtain{position:absolute;inset:0;z-index:5;background:#0d0b09;transform-origin:100% 50%;transition:transform 1.25s var(--mo-ease-io) .1s;pointer-events:none;}
     html.mo .mo-curtain::after{content:"";position:absolute;top:0;bottom:0;left:0;width:2px;background:linear-gradient(180deg,transparent,var(--brass-lt),transparent);box-shadow:0 0 24px 4px rgba(201,175,134,.45);}
@@ -397,17 +390,6 @@
     /* brass rules draw left to right */
     html.mo .mo-line{transform:scaleX(0);transform-origin:0 50%;transition:transform 1.4s var(--mo-ease) var(--d,0s);}
     html.mo .mo-line.in,html.mo .mo-go .mo-line{transform:scaleX(1);}
-    /* image unveil: clip curtain + settle zoom */
-    html.mo .mo-clip{clip-path:inset(100% 0 0 0);scale:1.12;transition:clip-path 1.5s var(--mo-ease-io) var(--d,0s),scale 2.2s var(--mo-ease) var(--d,0s);}
-    html.mo .mo-clip.in{clip-path:inset(0 0 0 0);scale:1;}
-    html.mo .mo-clip-x{clip-path:inset(0 100% 0 0);transition:clip-path 1.5s var(--mo-ease-io) var(--d,0s);}
-    html.mo .mo-clip-x.in{clip-path:inset(0 0 0 0);}
-
-    /* approach collage: accent photo floats in and settles */
-    html.mo .app-accent.mo-float{opacity:0;transform:translate3d(40px,70px,0) rotate(6deg);transition:opacity 1s ease .55s,transform 1.6s var(--mo-ease) .55s;}
-    html.mo .in .app-accent.mo-float{opacity:1;transform:none;}
-    html.mo .app-badge.mo-slide{opacity:0;transform:translate3d(-40px,0,0);transition:opacity .9s ease .9s,transform 1.2s var(--mo-ease) .9s;}
-    html.mo .in .app-badge.mo-slide{opacity:1;transform:none;}
 
 
 
@@ -415,8 +397,7 @@
 
 
 
-    /* wide salon band: parallax */
-    html.mo .wideband{background-size:cover!important;background-position:center calc(50% + var(--py,0px))!important;}
+
 
     /* buttons: champagne sheen + arrow nudge on hover */
     html.mo .btn{position:relative;overflow:hidden;isolation:isolate;transition:background .35s,color .35s,border-color .35s,transform .45s var(--mo-ease),box-shadow .45s var(--mo-ease);}
@@ -973,34 +954,6 @@
   var strip=document.querySelector('.strip');
   if(strip)$$('span',strip).forEach(function(s,k){tag(s,'mo-fade',2.2+k*.12);s.closest('.strip').classList.add('mo-go');});
 
-  /* ---------- scroll reveals ---------- */
-  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-  },{threshold:.16,rootMargin:'0px 0px -6% 0px'}):null;
-  function watch(el){if(!el)return;if(io)io.observe(el);else el.classList.add('in');}
-
-  var col=document.querySelector('.appcollage');
-  if(col){tag(col.querySelector('.app-main'),'mo-clip',0);watch(col.querySelector('.app-main'));
-    var acc=col.querySelector('.app-accent');if(acc)acc.classList.add('mo-float');
-    var bd=col.querySelector('.app-badge');if(bd)bd.classList.add('mo-slide');watch(col);}
-  $$('.gallery .gtile').forEach(function(x,k){tag(x,'mo-clip',k*.14);watch(x);});
-
-  /* safety net: anything still hidden after load + 4s near/above viewport gets revealed */
-  window.addEventListener('load',function(){setTimeout(function(){
-    $$('.mo-clip,.appcollage').forEach(function(el){
-      if(el.getBoundingClientRect().top<innerHeight*1.2)el.classList.add('in');});
-  },4000);});
-
-  /* ---------- scroll-linked parallax ---------- */
-  var wb=document.querySelector('.wideband'),ticking=false;
-  function onScroll(){
-    var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
-    if(hero&&y<innerHeight*1.2)hero.style.setProperty('--hy',(y*.28).toFixed(1)+'px');
-    if(wb){var r=wb.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){wb.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)*-.22).toFixed(1)+'px');}}
-    ticking=false;
-  }
-  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll);}},{passive:true});
-  onScroll();
 })();
 </script>
 </body></html>
