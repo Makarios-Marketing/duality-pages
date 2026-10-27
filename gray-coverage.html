@@ -346,6 +346,41 @@
   #work .gallery{grid-template-columns:repeat(3,1fr);}
   #work .gtile{aspect-ratio:1/1;}
   @media(max-width:700px){#work .gallery{grid-template-columns:1fr 1fr;}}
+  /* ===== SIGNATURE: before/after shade reveal + swatch rail (wow factor) ===== */
+  .reveal{background:var(--ink);color:#fff;padding:clamp(60px,8vw,112px) 0;position:relative;overflow:hidden;}
+  .reveal::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 86% -5%,rgba(201,175,134,.16),transparent 58%);pointer-events:none;}
+  .reveal .wrap{position:relative;z-index:1;}
+  .reveal .head .eyebrow,.reveal .head .eyebrow::before{color:var(--brass-lt);}
+  .reveal .head .eyebrow::before{background:var(--brass-lt);}
+  .reveal h2{color:#fff;}
+  .reveal .head p{color:var(--stone-2);max-width:60ch;margin-top:20px;}
+  .ba{position:relative;width:100%;aspect-ratio:16/9;margin-top:42px;overflow:hidden;outline:1px solid rgba(201,175,134,.45);outline-offset:-12px;touch-action:none;background:#0d0b09;}
+  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 26%;display:block;-webkit-user-drag:none;user-select:none;}
+  .ba .after{filter:saturate(1.1) contrast(1.03);}
+  .ba .before{filter:grayscale(.8) brightness(.95) contrast(.94) sepia(.05);clip-path:inset(0 calc(100% - var(--pos,55%)) 0 0);}
+  .ba .lab{position:absolute;bottom:20px;z-index:4;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:9px 15px;backdrop-filter:blur(3px);pointer-events:none;}
+  .ba .lab.l{left:20px;background:rgba(13,11,9,.66);color:#fff;}
+  .ba .lab.r{right:20px;background:rgba(248,244,238,.9);color:var(--ink);}
+  .ba .divider{position:absolute;top:0;bottom:0;left:var(--pos,55%);width:2px;margin-left:-1px;z-index:5;background:linear-gradient(180deg,transparent,var(--brass-lt) 12%,var(--brass-lt) 88%,transparent);box-shadow:0 0 22px 3px rgba(201,175,134,.45);pointer-events:none;}
+  .ba .grip{position:absolute;top:50%;left:var(--pos,55%);width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;z-index:6;display:flex;align-items:center;justify-content:center;gap:2px;color:var(--brass-lt);background:rgba(13,11,9,.5);border:1px solid var(--brass-lt);backdrop-filter:blur(5px);pointer-events:none;transition:transform .25s cubic-bezier(.16,1,.3,1);}
+  .ba:hover .grip{transform:scale(1.08);}
+  .ba input[type=range]{-webkit-appearance:none;appearance:none;position:absolute;inset:0;width:100%;height:100%;margin:0;background:transparent;cursor:ew-resize;z-index:7;}
+  .ba input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:56px;height:220px;background:transparent;cursor:ew-resize;}
+  .ba input[type=range]::-moz-range-thumb{width:56px;height:220px;border:0;background:transparent;cursor:ew-resize;}
+  .ba input[type=range]:focus-visible ~ .grip{outline:2px solid var(--brass-lt);outline-offset:4px;}
+  .ba-note{margin-top:16px;font-family:var(--sans);font-size:12.5px;letter-spacing:.03em;color:var(--stone-2);display:flex;align-items:center;gap:9px;}
+  .ba-note svg{flex:none;opacity:.8;}
+  .shades{margin-top:52px;}
+  .shades .shrow{display:flex;flex-wrap:wrap;border:1px solid rgba(201,175,134,.28);}
+  .shades .sw{flex:1 1 150px;min-width:128px;padding:20px 18px;border-right:1px solid rgba(201,175,134,.14);position:relative;overflow:hidden;transition:background .3s;}
+  .shades .sw:last-child{border-right:0;}
+  .shades .sw::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--c);}
+  .shades .sw b{display:block;font-family:var(--serif);font-size:1.3rem;color:#fff;line-height:1.12;}
+  .shades .sw span{font-family:var(--sans);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--stone-2);}
+  .shades .sw:hover{background:rgba(201,175,134,.07);}
+  .shades .capline{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.6vw,1.8rem);color:var(--brass-lt);}
+  @media(max-width:620px){.ba{aspect-ratio:4/5;}.shades .sw{flex:1 1 50%;border-bottom:1px solid rgba(201,175,134,.14);}}
+
   /* ===== MOTION LAYER (only active when html.mo is set; off for reduced-motion) ===== */
   :root{--mo-ease:cubic-bezier(.16,1,.3,1);--mo-ease-io:cubic-bezier(.77,0,.18,1);}
   @media (prefers-reduced-motion:no-preference){
@@ -474,6 +509,38 @@
         <a class="btn" href="https://login.meevo.com/DualitySalonBuffalo/ob?locationId=105068" target="_blank" rel="noopener">Book Your Retouch →</a>
         <a class="btn btn-ghost" href="tel:17169988528">Call 716 998 8528</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="difference" class="reveal">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The difference</span>
+      <h2>See what coverage <em>actually does</em></h2>
+      <hr class="rule">
+      <p>Drag the handle across to compare dull, grown-out gray with fresh, shade-matched coverage. The right side is the soft, natural finish we build for every Williamsville client, not a flat block of dye.</p>
+    </div>
+    <div class="ba" id="ba">
+      <img class="after" src="https://dualitysalonbuffalo.com/wp-content/uploads/2020/06/AdobeStock_164034418-1-scaled.jpeg" alt="Fresh, shade-matched gray coverage with soft, natural tone at Duality Salon in Williamsville, NY">
+      <img class="before" src="https://dualitysalonbuffalo.com/wp-content/uploads/2020/06/AdobeStock_164034418-1-scaled.jpeg" alt="" aria-hidden="true">
+      <span class="lab l">Gray &amp; faded</span>
+      <span class="lab r">After coverage</span>
+      <span class="divider" aria-hidden="true"></span>
+      <span class="grip" aria-hidden="true"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4 3 9l5 5"/><path d="M14 4l5 5-5 5"/></svg></span>
+      <input type="range" min="2" max="98" value="55" aria-label="Drag to compare gray hair before and after coverage">
+    </div>
+    <p class="ba-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C9AF86" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg> Visual demonstration of tone. Real before-and-after photos from our color clients are on the way.</p>
+    <div class="shades">
+      <div class="shrow">
+        <div class="sw" style="--c:#2b2320"><b>Soft Black</b><span>Cool &amp; deep</span></div>
+        <div class="sw" style="--c:#3a2a20"><b>Espresso</b><span>Rich brown</span></div>
+        <div class="sw" style="--c:#5a3b26"><b>Chestnut</b><span>Warm neutral</span></div>
+        <div class="sw" style="--c:#7a5230"><b>Golden Brown</b><span>Sun-warmed</span></div>
+        <div class="sw" style="--c:#b78a52"><b>Warm Blonde</b><span>Soft &amp; bright</span></div>
+        <div class="sw" style="--c:#6b5f52"><b>Natural Ash</b><span>No brass</span></div>
+      </div>
+      <p class="capline">Every service starts with a shade matched to you.</p>
     </div>
   </div>
 </section>
@@ -946,6 +1013,16 @@
   var strip=document.querySelector('.strip');
   if(strip)$$('span',strip).forEach(function(s,k){tag(s,'mo-fade',2.2+k*.12);s.closest('.strip').classList.add('mo-go');});
 
+})();
+</script>
+<script>
+/* before/after shade reveal slider */
+(function(){
+  var ba=document.getElementById('ba');if(!ba)return;
+  var range=ba.querySelector('input[type=range]');if(!range)return;
+  function set(v){ba.style.setProperty('--pos',v+'%');}
+  set(range.value);
+  range.addEventListener('input',function(){set(range.value);});
 })();
 </script>
 </body></html>
