@@ -419,6 +419,9 @@
 
 
 
+    /* subtle hero fade-up */
+    html.mo .hero .mo-soft{opacity:0;transform:translate3d(0,14px,0);transition:opacity .8s ease var(--d,0s),transform .9s var(--mo-ease) var(--d,0s);}
+    html.mo .hero.mo-go .mo-soft{opacity:1;transform:none;}
     /* buttons: champagne sheen + arrow nudge on hover */
     html.mo .btn{position:relative;overflow:hidden;isolation:isolate;transition:background .35s,color .35s,border-color .35s,transform .45s var(--mo-ease),box-shadow .45s var(--mo-ease);}
     html.mo .btn::before{content:"";position:absolute;top:0;bottom:0;left:0;width:60%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,246,228,.38),transparent);transform:translateX(-140%) skewX(-18deg);transition:transform .9s var(--mo-ease);pointer-events:none;}
@@ -1037,7 +1040,12 @@
   }
   function tag(el,cls,d){if(!el)return;el.classList.add(cls);if(d!=null)el.style.setProperty('--d',d+'s');}
 
-  /* hero intro animation removed (2026-10-29): hero loads static */
+  /* ---------- HERO: subtle fade-up (light version) ---------- */
+  var hero=document.querySelector('.hero');
+  if(hero){
+    ['.eyebrow','h1','.rule','.lede','.acts','.stats'].forEach(function(sel,k){var el=hero.querySelector(sel);if(el){el.classList.add('mo-soft');el.style.setProperty('--d',(.08+k*.09).toFixed(2)+'s');}});
+    requestAnimationFrame(function(){requestAnimationFrame(function(){hero.classList.add('mo-go');});});
+  }
 })();
 </script>
 <script>
