@@ -386,14 +386,7 @@
   @media (prefers-reduced-motion:no-preference){
 
     /* curtain wipe with a champagne leading edge */
-    html.mo .mo-curtain{position:absolute;inset:0;z-index:5;background:#0d0b09;transform-origin:100% 50%;transition:transform 1.25s var(--mo-ease-io) .1s;pointer-events:none;}
-    html.mo .mo-curtain::after{content:"";position:absolute;top:0;bottom:0;left:0;width:2px;background:linear-gradient(180deg,transparent,var(--brass-lt),transparent);box-shadow:0 0 24px 4px rgba(201,175,134,.45);}
-    html.mo .hero.mo-go .mo-curtain{transform:scaleX(0);}
     /* inset frame draws outward */
-    html.mo .hero::after{clip-path:inset(50% 50% 50% 50%);transition:clip-path 1.6s var(--mo-ease) 1.1s;}
-    html.mo .hero.mo-go::after{clip-path:inset(0 0 0 0);}
-    html.mo .hero-vlabel{opacity:0;letter-spacing:.6em;transition:opacity 1.4s ease 1.6s,letter-spacing 1.8s var(--mo-ease) 1.6s;}
-    html.mo .hero.mo-go .hero-vlabel{opacity:.82;letter-spacing:.26em;}
 
     /* word-by-word mask rise (hero H1 + section H2s) */
     html.mo .mo-w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .02em .12em;margin:-.06em -.02em -.12em;}
@@ -457,6 +450,15 @@
   #difference .head h2 em{color:var(--brass-lt);}
   #difference .head p{color:#cbc2b4;}
   @media(max-width:560px){.midcta .acts{width:100%;flex-direction:column;}.midcta .acts .btn{width:100%;justify-content:center;}}
+
+  /* trust bar (was unstyled on this page; matches Haircuts + Hair Color) */
+  .trustbar{background:var(--white);border-bottom:1px solid var(--line);}
+  .trustbar .in{max-width:var(--wrap);margin:0 auto;padding:15px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;font-size:13.5px;letter-spacing:.02em;color:var(--stone);}
+  .trustbar .stars{color:var(--brass);letter-spacing:2px;}
+  .trustbar .sep{color:var(--line);}
+  .trustbar a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:1px;}
+  .trustbar a:hover{color:var(--brass);}
+  @media(max-width:600px){.trustbar .sep{display:none;}.trustbar .in{padding:14px 20px;}}
 </style>
 <script>if(window.matchMedia&&matchMedia('(prefers-reduced-motion: no-preference)').matches){document.documentElement.classList.add('mo');setTimeout(function(){if(!window.__moReady)document.documentElement.classList.remove('mo');},3000);}</script>
 </head><body>
@@ -1035,22 +1037,7 @@
   }
   function tag(el,cls,d){if(!el)return;el.classList.add(cls);if(d!=null)el.style.setProperty('--d',d+'s');}
 
-  /* ---------- HERO intro ---------- */
-  var hero=document.querySelector('.hero');
-  if(hero){
-    var c=document.createElement('div');c.className='mo-curtain';hero.appendChild(c);
-    tag(hero.querySelector('.eyebrow'),'mo-eb',.95);
-    var h1=hero.querySelector('h1');if(h1)split(h1,1.05,.09,true);
-    tag(hero.querySelector('.rule'),'mo-line',1.55);
-    tag(hero.querySelector('.lede'),'mo-r',1.6);
-    tag(hero.querySelector('.acts'),'mo-r',1.75);
-    $$('.stats>div',hero).forEach(function(s,k){tag(s,'mo-r',1.95+k*.12);});
-    tag(hero.querySelector('.stats'),'mo-fade',1.9);
-    requestAnimationFrame(function(){requestAnimationFrame(function(){hero.classList.add('mo-go');});});
-  }
-  var strip=document.querySelector('.strip');
-  if(strip)$$('span',strip).forEach(function(s,k){tag(s,'mo-fade',2.2+k*.12);s.closest('.strip').classList.add('mo-go');});
-
+  /* hero intro animation removed (2026-10-29): hero loads static */
 })();
 </script>
 <script>
