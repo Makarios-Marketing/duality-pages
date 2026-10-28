@@ -462,6 +462,37 @@
   .trustbar a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:1px;}
   .trustbar a:hover{color:var(--brass);}
   @media(max-width:600px){.trustbar .sep{display:none;}.trustbar .in{padding:14px 20px;}}
+
+  /* ===== Balayage signature: "Preview your melt" ===== */
+  @property --end{syntax:'<color>';inherits:true;initial-value:#c8955a;}
+  @property --mid{syntax:'<color>';inherits:true;initial-value:#e2b67c;}
+  .melt{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;margin-top:56px;align-items:stretch;}
+  .melt-panel{position:relative;min-height:460px;overflow:hidden;border:1px solid rgba(201,175,134,.32);
+    background:linear-gradient(180deg,#2b1f18 0%,#3a2a20 20%,var(--mid) 58%,var(--end) 100%);
+    transition:--end .9s ease,--mid .9s ease;}
+  .melt-panel::after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.14);pointer-events:none;}
+  .melt-ribbons{position:absolute;inset:-10%;opacity:.55;mix-blend-mode:soft-light;
+    background:
+      repeating-linear-gradient(102deg,rgba(255,255,255,0) 0 22px,rgba(255,255,255,.55) 30px,rgba(255,255,255,0) 44px),
+      repeating-linear-gradient(97deg,rgba(0,0,0,0) 0 38px,rgba(0,0,0,.35) 50px,rgba(0,0,0,0) 66px);
+    -webkit-mask-image:linear-gradient(180deg,transparent 8%,#000 45%,#000 100%);mask-image:linear-gradient(180deg,transparent 8%,#000 45%,#000 100%);}
+  .melt-lab{position:absolute;left:28px;z-index:2;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:8px 13px;background:rgba(13,11,9,.62);color:#fff;backdrop-filter:blur(3px);}
+  .melt-lab.top{top:28px;}.melt-lab.mid{top:48%;}.melt-lab.end{bottom:28px;background:rgba(248,244,238,.92);color:var(--ink);}
+  .melt-lab em{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:.02em;text-transform:none;color:var(--brass);}
+  .melt-side{display:flex;flex-direction:column;justify-content:center;}
+  .melt-side h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3vw,2.4rem);color:#fff;margin:12px 0 0;line-height:1.1;}
+  .melt-side h3 em{color:var(--brass-lt);}
+  .tones{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;}
+  .tone{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;cursor:pointer;padding:14px 14px 13px;background:rgba(255,255,255,.035);border:1px solid rgba(201,175,134,.22);color:#fff;font:inherit;transition:border-color .3s,background .3s,transform .3s;}
+  .tone i{display:block;width:100%;height:6px;margin-bottom:8px;}
+  .tone b{font-family:var(--serif);font-weight:400;font-size:1.18rem;line-height:1.1;}
+  .tone span{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#a39a8f;}
+  .tone:hover{border-color:rgba(201,175,134,.55);transform:translateY(-2px);}
+  .tone.on{border-color:var(--brass-lt);background:rgba(201,175,134,.1);}
+  .tone:focus-visible{outline:2px solid var(--brass-lt);outline-offset:3px;}
+  .melt-note{margin-top:18px;font-size:12.5px;color:#a39a8f;letter-spacing:.02em;}
+  @media(max-width:900px){.melt{grid-template-columns:1fr;gap:28px}.melt-panel{min-height:320px}.tones{grid-template-columns:repeat(2,1fr)}}
+  @media(prefers-reduced-motion:reduce){.melt-panel{transition:none}.tone{transition:none}}
 </style>
 <script>if(window.matchMedia&&matchMedia('(prefers-reduced-motion: no-preference)').matches){document.documentElement.classList.add('mo');setTimeout(function(){if(!window.__moReady)document.documentElement.classList.remove('mo');},3000);}</script>
 </head><body>
@@ -574,16 +605,27 @@
         <a class="btn btn-ghost-lt" href="https://login.meevo.com/DualitySalonBuffalo/ob?locationId=105068" target="_blank" rel="noopener">Book highlights &rarr;</a>
       </article>
     </div>
-    <div class="shades">
-      <div class="shrow">
-        <div class="sw" style="--c:#c8955a"><b>Honey</b><span>Warm &amp; golden</span></div>
-        <div class="sw" style="--c:#a8743f"><b>Caramel</b><span>Rich &amp; sunny</span></div>
-        <div class="sw" style="--c:#8a6a4a"><b>Bronde</b><span>Brown meets blonde</span></div>
-        <div class="sw" style="--c:#d8b98a"><b>Soft Blonde</b><span>Bright, not brassy</span></div>
-        <div class="sw" style="--c:#5e4330"><b>Mocha</b><span>Deep &amp; dimensional</span></div>
-        <div class="sw" style="--c:#b9a58a"><b>Sandy Beige</b><span>Cool &amp; soft</span></div>
+    <div class="melt" id="melt">
+      <div class="melt-panel" style="--end:#c8955a;--mid:#e2b67c;" role="img" aria-label="Illustration of balayage blending from a natural root into the selected tone">
+        <div class="melt-ribbons"></div>
+        <span class="melt-lab top">Root &middot; your natural color</span>
+        <span class="melt-lab mid">Blended mid-lengths</span>
+        <span class="melt-lab end">Ends &middot; <em class="melt-name">Honey</em></span>
       </div>
-      <p class="capline">Every balayage is toned to suit your skin.</p>
+      <div class="melt-side">
+        <span class="fvb-tag">Preview your melt</span>
+        <h3>Pick a tone, <em>see the blend</em></h3>
+        <p class="fvb-lede">Balayage keeps your own color at the root and melts into brightness toward the ends. Tap a tone to preview how it blends.</p>
+        <div class="tones" role="group" aria-label="Balayage tones">
+          <button type="button" class="tone on" data-end="#c8955a" data-mid="#e2b67c" data-name="Honey" aria-pressed="true"><i style="background:linear-gradient(135deg,#c8955a,#e2b67c)"></i><b>Honey</b><span>Warm &amp; golden</span></button>
+          <button type="button" class="tone" data-end="#a8743f" data-mid="#c99a62" data-name="Caramel" aria-pressed="false"><i style="background:linear-gradient(135deg,#a8743f,#c99a62)"></i><b>Caramel</b><span>Rich &amp; sunny</span></button>
+          <button type="button" class="tone" data-end="#8a6a4a" data-mid="#b08c66" data-name="Bronde" aria-pressed="false"><i style="background:linear-gradient(135deg,#8a6a4a,#b08c66)"></i><b>Bronde</b><span>Brown meets blonde</span></button>
+          <button type="button" class="tone" data-end="#d8b98a" data-mid="#ecd7b3" data-name="Soft Blonde" aria-pressed="false"><i style="background:linear-gradient(135deg,#d8b98a,#ecd7b3)"></i><b>Soft Blonde</b><span>Bright, not brassy</span></button>
+          <button type="button" class="tone" data-end="#5e4330" data-mid="#83624a" data-name="Mocha" aria-pressed="false"><i style="background:linear-gradient(135deg,#5e4330,#83624a)"></i><b>Mocha</b><span>Deep &amp; dimensional</span></button>
+          <button type="button" class="tone" data-end="#b9a58a" data-mid="#d6c7b0" data-name="Sandy Beige" aria-pressed="false"><i style="background:linear-gradient(135deg,#b9a58a,#d6c7b0)"></i><b>Sandy Beige</b><span>Cool &amp; soft</span></button>
+        </div>
+        <p class="melt-note">Illustration of tone only. Your stylist matches the exact shade to your skin at your free consultation.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1070,5 +1112,12 @@
   set(range.value);
   range.addEventListener('input',function(){set(range.value);});
 })();
+</script>
+<script>
+/* Balayage "Preview your melt" tone picker */
+(function(){var m=document.getElementById('melt');if(!m)return;var p=m.querySelector('.melt-panel'),nm=m.querySelector('.melt-name');
+m.querySelectorAll('.tone').forEach(function(b){b.addEventListener('click',function(){
+ m.querySelectorAll('.tone').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed','false');});
+ b.classList.add('on');b.setAttribute('aria-pressed','true');p.style.setProperty('--end',b.dataset.end);p.style.setProperty('--mid',b.dataset.mid);nm.textContent=b.dataset.name;});});})();
 </script>
 </body></html>
