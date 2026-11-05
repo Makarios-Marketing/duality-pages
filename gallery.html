@@ -353,11 +353,20 @@
   .igx-notch{width:96px;height:26px;border-radius:20px;background:#111;}
   .igx-scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
   .igx-scroll .embedsocial-hashtag{min-height:600px;}
+  .igx-scroll{position:relative;}
+  .igx-scroll::before{content:"Loading @dualitysalonbuffalo\2026";position:absolute;top:120px;left:0;right:0;text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a0968a;}
+  .igx-scroll .embedsocial-hashtag{position:relative;z-index:1;}
   .igx-live{position:absolute;top:-14px;left:50%;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:9px;padding:8px 16px;background:var(--brass);color:#fff;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);}
   .igx-live i{width:8px;height:8px;border-radius:50%;background:#ff5a5a;box-shadow:0 0 0 0 rgba(255,90,90,.7);animation:igPulse 1.8s infinite;}
   @keyframes igSpin{to{transform:rotate(360deg)}}
   @keyframes igPulse{0%{box-shadow:0 0 0 0 rgba(255,90,90,.7)}70%{box-shadow:0 0 0 10px rgba(255,90,90,0)}100%{box-shadow:0 0 0 0 rgba(255,90,90,0)}}
   @media(max-width:900px){.igx-in{grid-template-columns:1fr;}.igx-fan{display:none;}.igx-phone{max-width:380px;}.igx-screen{height:640px;}}
+  @media(max-width:600px){.igx-phone{padding:10px;border-radius:42px;}.igx-screen{height:min(520px,70vh);border-radius:32px;}.igx-copy h2,.spot-copy h2{font-size:40px;}.igx-card{gap:12px;padding:14px;}.igx-ring{flex-basis:50px;height:50px;}.igx-who b{font-size:14.5px;}
+    #work .acts .btn,#instagram .btn,.spot .acts .btn{width:100%;}
+    .gi figcaption{font-size:9.5px;letter-spacing:.12em;line-height:1.35;padding:26px 10px 9px;}
+    .gal-hero h1{font-size:58px!important;}
+    .ticker{padding:14px 0;}.ticker span{font-size:24px;}
+    .spot-img figcaption{font-size:10px;letter-spacing:.18em;}}
   @media(max-width:420px){.igx-follow{padding:10px 12px;letter-spacing:.12em;}.igx-follow svg{display:none;}}
   @media(prefers-reduced-motion:reduce){.igx-ring,.igx-ring svg,.igx-live i{animation:none!important;}}
   /* ===== GALLERY wow layer ===== */
