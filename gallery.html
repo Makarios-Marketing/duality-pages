@@ -322,6 +322,44 @@
   @media(max-width:600px){.acts{flex:1 1 100%;min-width:0;max-width:100%}.acts .btn{white-space:normal;text-align:center;max-width:100%}}
 
   /* ===== GALLERY page ===== */
+
+  /* ===== Instagram showcase ===== */
+  .igx{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(80px,9vw,130px);}
+  .igx::before{content:"";position:absolute;width:900px;height:900px;right:-260px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(201,175,134,.20),rgba(201,175,134,0) 62%);z-index:-1;}
+  .igx::after{content:"";position:absolute;width:700px;height:700px;left:-280px;bottom:-360px;border-radius:50%;background:radial-gradient(circle,rgba(122,91,51,.28),rgba(122,91,51,0) 62%);z-index:-1;}
+  .igx-in{display:grid;grid-template-columns:1fr minmax(0,440px);gap:clamp(40px,7vw,110px);align-items:center;}
+  .igx-copy h2{color:#fff;font-size:clamp(40px,5vw,64px);line-height:1;margin-top:14px;}
+  .igx-copy h2 em{color:var(--brass-lt);}
+  .igx-copy p{color:#d9cfc2;font-size:17px;max-width:32em;margin:22px 0 30px;}
+  .igx-card{display:flex;align-items:center;gap:16px;max-width:460px;padding:16px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(201,175,134,.35);text-decoration:none;transition:background .3s,border-color .3s,transform .3s;}
+  .igx-card:hover{background:rgba(255,255,255,.08);border-color:var(--brass-lt);transform:translateY(-2px);}
+  .igx-ring{flex:0 0 58px;height:58px;border-radius:50%;padding:3px;background:conic-gradient(from 210deg,#C9AF86,#7A5B33,#e9d7b6,#C9AF86);display:block;animation:igSpin 8s linear infinite;}
+  .igx-ring svg{width:100%;height:100%;display:block;border-radius:50%;background:var(--ink);color:var(--brass-lt);padding:6px;animation:igSpin 8s linear infinite reverse;}
+  .igx-who{flex:1;min-width:0;display:flex;flex-direction:column;}
+  .igx-who b{color:#fff;font-weight:500;font-size:16px;letter-spacing:.02em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .igx-who span{color:#b9ad9e;font-size:13px;}
+  .igx-follow{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;background:var(--ivory);color:var(--ink);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;}
+  .igx-fan{position:relative;height:220px;margin-top:44px;max-width:460px;}
+  .igx-fan img{position:absolute;top:0;width:150px;aspect-ratio:3/4;object-fit:cover;border:6px solid #f3ece2;box-shadow:0 24px 40px -18px rgba(0,0,0,.7);transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+  .igx-fan img:nth-child(1){left:0;transform:rotate(-9deg);}
+  .igx-fan img:nth-child(2){left:120px;transform:rotate(3deg) translateY(-8px);z-index:2;}
+  .igx-fan img:nth-child(3){left:240px;transform:rotate(11deg) translateY(6px);}
+  .igx-copy:hover .igx-fan img:nth-child(1){transform:rotate(-14deg) translateX(-18px);}
+  .igx-copy:hover .igx-fan img:nth-child(2){transform:rotate(0) translateY(-22px) scale(1.04);}
+  .igx-copy:hover .igx-fan img:nth-child(3){transform:rotate(16deg) translateX(18px);}
+  .igx-phone{position:relative;justify-self:center;width:100%;max-width:400px;padding:14px;border-radius:52px;background:linear-gradient(145deg,#3a332c,#14110f 55%,#2a241f);box-shadow:0 0 0 1px rgba(201,175,134,.35),0 60px 90px -40px rgba(0,0,0,.85),0 0 80px -20px rgba(201,175,134,.25);}
+  .igx-screen{position:relative;border-radius:40px;overflow:hidden;background:#fff;height:min(760px,78vh);display:flex;flex-direction:column;}
+  .igx-bar{flex:0 0 38px;display:flex;justify-content:center;align-items:center;background:#fff;}
+  .igx-notch{width:96px;height:26px;border-radius:20px;background:#111;}
+  .igx-scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+  .igx-scroll .embedsocial-hashtag{min-height:600px;}
+  .igx-live{position:absolute;top:-14px;left:50%;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:9px;padding:8px 16px;background:var(--brass);color:#fff;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);}
+  .igx-live i{width:8px;height:8px;border-radius:50%;background:#ff5a5a;box-shadow:0 0 0 0 rgba(255,90,90,.7);animation:igPulse 1.8s infinite;}
+  @keyframes igSpin{to{transform:rotate(360deg)}}
+  @keyframes igPulse{0%{box-shadow:0 0 0 0 rgba(255,90,90,.7)}70%{box-shadow:0 0 0 10px rgba(255,90,90,0)}100%{box-shadow:0 0 0 0 rgba(255,90,90,0)}}
+  @media(max-width:900px){.igx-in{grid-template-columns:1fr;}.igx-fan{display:none;}.igx-phone{max-width:380px;}.igx-screen{height:640px;}}
+  @media(max-width:420px){.igx-follow{padding:10px 12px;letter-spacing:.12em;}.igx-follow svg{display:none;}}
+  @media(prefers-reduced-motion:reduce){.igx-ring,.igx-ring svg,.igx-live i{animation:none!important;}}
   /* ===== GALLERY wow layer ===== */
   .hero.gal-hero{overflow:hidden;background:radial-gradient(ellipse at 20% 40%,#2a241f 0%,#161412 62%);min-height:640px;}
   .hmosaic{position:absolute;top:-40px;bottom:-40px;right:3%;width:min(46%,640px);display:grid;grid-template-columns:repeat(3,1fr);gap:14px;transform:rotate(-4deg);z-index:0;-webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);}
@@ -435,7 +473,7 @@
       <p class="lede">Color, cuts, curls, and the occasional bold vivid, all done in our Williamsville salon. Browse a few favorites below, then follow along on Instagram for what is new in the chair each week.</p>
       <div class="acts">
         <a class="btn btn-light" href="https://login.meevo.com/DualitySalonBuffalo/ob?locationId=105068" target="_blank" rel="noopener">Book Your Visit &rarr;</a>
-        <a class="btn btn-ghost-lt" href="#instagram">Follow on Instagram</a>
+        <a class="btn btn-ghost-lt" href="#instagram">See our Instagram</a>
       </div>
     </div>
   </div>
@@ -498,21 +536,31 @@
   </div>
 </section>
 
-<section id="instagram" class="band-sand">
-  <div class="wrap">
-    <div class="ig-head">
-      <div>
-        <span class="eyebrow">On Instagram</span>
-        <h2 class="ig-h2">Fresh from <em>the chair</em></h2>
+<section id="instagram" class="band-ink on-dark igx">
+  <div class="wrap igx-in">
+    <div class="igx-copy reveal">
+      <span class="eyebrow lt">On Instagram</span>
+      <h2>Fresh from <em>the chair</em></h2>
+      <hr class="rule">
+      <p>New color, fresh cuts, and behind-the-scenes moments from the salon, posted as they happen. Scroll the live feed, then follow along so you never miss a new look.</p>
+      <a class="igx-card" href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener">
+        <span class="igx-ring"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg></span>
+        <span class="igx-who"><b>@dualitysalonbuffalo</b><span>Duality Salon &middot; Williamsville, NY</span></span>
+        <span class="igx-follow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Follow</span>
+      </a>
+      <div class="igx-fan" aria-hidden="true">
+        <img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-2009i-768x1024.jpg" alt=""><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0634-768x1024.jpg" alt=""><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-232e4-768x1024.jpg" alt="">
       </div>
-      <a class="ig-handle" href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener">@dualitysalonbuffalo</a>
     </div>
-    <div class="ig-live"><div class="embedsocial-hashtag" data-ref="9da85f77067b915a6370e8d5dfbe12f058a287f8"></div></div>
-    <script>(function(d,s,id){var js;if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;js.src="https://embedsocial.com/cdn/ht.js";d.getElementsByTagName("head")[0].appendChild(js);}(document,"script","EmbedSocialHashtagScript"));</script>
-    <div class="acts" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
-      <a class="btn" href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener">Follow @dualitysalonbuffalo</a>
+    <div class="igx-phone reveal">
+      <span class="igx-live"><i></i>Live feed</span>
+      <div class="igx-screen">
+        <div class="igx-bar"><span class="igx-notch"></span></div>
+        <div class="igx-scroll"><div class="embedsocial-hashtag" data-ref="9da85f77067b915a6370e8d5dfbe12f058a287f8"></div></div>
+      </div>
     </div>
   </div>
+  <script>(function(d,s,id){var js;if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;js.src="https://embedsocial.com/cdn/ht.js";d.getElementsByTagName("head")[0].appendChild(js);}(document,"script","EmbedSocialHashtagScript"));</script>
 </section>
 
 <section id="space" class="band-white">
