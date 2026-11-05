@@ -1,0 +1,550 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery · Duality</title>
+<meta name="description" content="See real hair color, haircuts, curls, vivids and styling from Duality Salon in Williamsville, NY. Browse the gallery, follow along on Instagram, and book your visit.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+  /* Duality Salon — new-home design system (duality-home/home.css tokens). Warm editorial, squared. */
+  :root{
+    --brass:#7A5B33; --brass-lt:#C9AF86;
+    --ink:#161412; --ink-2:#221F1C; --ink-3:#2E2A26;
+    --ivory:#F8F4EE; --sand:#EFE8DE; --white:#FFFFFF;
+    --line:#E3DACD; --line-dark:rgba(255,255,255,.14);
+    --stone:#655C52; --stone-2:#A39A8F;
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    --sans:'Jost','Segoe UI',Arial,sans-serif;
+    --wrap:1180px;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.75;font-weight:300;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;line-height:1.06;color:var(--ink);margin:0;}
+  em{font-style:italic;}
+  p{margin:0 0 16px;}
+  a{color:var(--brass);text-decoration:none;}
+  a:hover{text-decoration:underline;text-underline-offset:3px;}
+  .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding-inline:40px;}
+  @media(max-width:600px){.wrap{padding-inline:22px;}}
+  .tnum{font-variant-numeric:tabular-nums;}
+
+  /* eyebrow with diamond + rule */
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--sans);font-weight:500;font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);}
+  .eyebrow::before{content:"";width:7px;height:7px;background:var(--brass);transform:rotate(45deg);flex:none;}
+  .on-dark .eyebrow,.eyebrow.lt{color:var(--brass-lt);}
+  .on-dark .eyebrow::before,.eyebrow.lt::before{background:var(--brass-lt);}
+  .rule{width:56px;height:2px;background:linear-gradient(90deg,var(--brass),var(--brass-lt));margin:22px 0 0;border:0;}
+
+  /* buttons — squared, ink fill, brass hover */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--sans);font-weight:500;font-size:13.5px;letter-spacing:.2em;text-transform:uppercase;padding:17px 32px;background:var(--ink);color:#fff;border:1px solid var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s;}
+  .btn:hover{background:var(--brass);border-color:var(--brass);color:#fff;text-decoration:none;}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn-light{background:var(--ivory);color:var(--ink);border-color:var(--ivory);}
+  .btn-light:hover{background:var(--brass);border-color:var(--brass);color:#fff;}
+  .btn-ghost-lt{background:transparent;color:#fff;border-color:var(--line-dark);}
+  .btn-ghost-lt:hover{background:#fff;color:var(--ink);border-color:#fff;}
+
+  /* ===== site header + footer (reused from new-home) ===== */
+  .emblem{display:block;}
+  .topbar{background:var(--ink);color:#bdb4a8;font-size:13.5px;letter-spacing:.02em;}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:44px;gap:20px;}
+  .topbar b{color:#fff;font-weight:500;}
+  .topbar .sep{color:var(--brass-lt);margin:0 12px;}
+  .topbar .right{display:flex;gap:26px;align-items:center;}
+  .topbar .right a{color:#bdb4a8;text-decoration:none;}
+  .topbar .right a:hover{color:#fff;}
+  .nav{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:92px;gap:24px;}
+  .brand{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none;color:var(--ink);}
+  .brand .word{line-height:1;}
+  .brand .word b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:.2em;}
+  .brand .word span{display:block;font-size:10.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--stone);margin-top:6px;}
+  .nav .links{display:flex;gap:34px;font-size:13.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;}
+  .nav .links a{position:relative;padding:6px 0;color:var(--ink);text-decoration:none;}
+  .nav .links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--brass);transition:right .3s;}
+  .nav .links a:hover::after,.nav .links a.active::after{right:0;}
+  .nav .cta{display:flex;align-items:center;gap:22px;flex-shrink:0;}
+  .nav .phone{text-align:right;line-height:1.2;white-space:nowrap;color:var(--ink);text-decoration:none;}
+  .nav .phone small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);}
+  .nav .phone b{font-family:var(--serif);font-weight:600;font-size:22px;}
+  .nav .btn{padding:15px 26px;}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:none;align-items:center;justify-content:center;cursor:pointer;}
+  .burger span,.burger span::before,.burger span::after{display:block;width:18px;height:1.5px;background:var(--ink);position:relative;}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0;}
+  .burger span::before{top:-6px;} .burger span::after{top:6px;}
+  .footer{background:var(--ink);color:#bdb4a8;padding:90px 0 0;font-size:15px;}
+  .footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:60px;}
+  .footer .brand .word b{color:#fff;}
+  .footer .brand .word span{color:#8f867b;}
+  .footer p{margin:22px 0 0;max-width:320px;}
+  .footer h4{font-family:var(--sans);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#fff;font-weight:500;margin-bottom:22px;}
+  .footer ul{list-style:none;margin:0;padding:0;}
+  .footer li{padding:5px 0;}
+  .footer a{color:#bdb4a8;text-decoration:none;}
+  .footer a:hover{color:#fff;}
+  .footer .social{display:flex;gap:12px;margin-top:26px;}
+  .footer .social a{width:42px;height:42px;border:1px solid var(--line-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .footer .social a:hover{border-color:var(--brass-lt);}
+  .footer .bottom{margin-top:80px;border-top:1px solid var(--line-dark);padding:26px 0;display:flex;justify-content:space-between;font-size:13px;color:#8f867b;gap:20px;flex-wrap:wrap;}
+  .mbar{display:none;}
+  @media(max-width:1180px){
+    .nav .links{gap:22px;font-size:12.5px;}
+    .nav .phone{display:none;}
+    .footer .grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:900px){
+    .topbar .left{display:none;}
+    .topbar .wrap{justify-content:center;}
+    .nav .wrap{height:76px;}
+    .nav .links,.nav .cta .btn{display:none;}
+    .burger{display:flex;}
+    .nav.open .links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(22,20,18,.12);padding:8px 24px 20px;font-size:14px;}
+    .nav.open .links a{padding:16px 0;border-bottom:1px solid var(--line);}
+    .nav.open .links a::after{display:none;}
+    .brand .word b{font-size:24px;}
+    .brand svg{width:46px;height:46px;}
+    .footer .grid{grid-template-columns:1fr;gap:40px;}
+    .footer{padding-bottom:70px;}
+    .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 24px rgba(0,0,0,.18);}
+    .mbar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 10px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;text-decoration:none;}
+    .mbar .call{background:var(--ivory);color:var(--ink);}
+    .mbar .book{background:var(--ink);color:#fff;}
+  }
+
+  /* hero — full-bleed salon photo (careers-page style) */
+  .hero{position:relative;min-height:620px;display:flex;align-items:center;color:var(--ivory);
+    background:linear-gradient(90deg,rgba(13,11,9,.93) 0%,rgba(15,13,11,.72) 48%,rgba(15,13,11,.4) 100%),
+    url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-1.jpg') center 42%/cover no-repeat;}
+  .hero .in{max-width:660px;padding:40px 0;}
+  .hero h1{font-size:clamp(34px,4.3vw,52px);color:#fff;margin:18px 0 0;}
+  @media(min-width:721px){.hero h1{white-space:nowrap;}}
+  .hero h1 em{color:var(--brass-lt);}
+  .hero .rule{margin:16px 0 0;}
+  .hero .lede{margin-top:22px;max-width:32em;color:#e6ded3;font-size:17px;}
+  .hero .acts{display:flex;flex-wrap:wrap;gap:16px;margin-top:26px;}
+  .hero .stats{display:flex;flex-wrap:wrap;gap:40px;margin-top:34px;border-top:1px solid rgba(201,175,134,.3);padding-top:22px;}
+  .hero .stats b{font-family:var(--serif);font-weight:600;font-size:26px;color:#fff;display:block;line-height:1.1;}
+  .hero .stats span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-lt);}
+  /* hero sophistication — inset frame + vertical salon label */
+  .hero::after{content:"";position:absolute;inset:22px;border:1px solid rgba(201,175,134,.26);pointer-events:none;z-index:1;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-vlabel{position:absolute;right:34px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;white-space:nowrap;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--brass-lt);opacity:.82;z-index:2;}
+  @media(max-width:900px){.hero::after{inset:14px;}.hero-vlabel{display:none;}}
+  @media(max-width:900px){.hero{min-height:520px;}}
+  @media(max-width:560px){.hero{min-height:auto;}.hero .in{padding:46px 0 42px;}.hero h1{font-size:30px;white-space:normal;line-height:1.14;}.hero .stats{gap:18px 26px;}.hero .acts .btn{flex:1 1 auto;justify-content:center;}}
+
+  /* trust strip */
+  .strip{background:var(--ink);color:#efe8de;}
+  .strip .in{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 44px;max-width:var(--wrap);margin:0 auto;padding:20px 28px;text-align:center;}
+  .strip span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2);}
+  .strip b{color:#fff;font-weight:400;}
+  .strip .br{color:var(--brass-lt);}
+
+  /* sections */
+  section{padding:76px 0;}
+  .band-sand{background:var(--sand);}
+  .band-white{background:var(--white);}
+  .band-ink{background:var(--ink);color:#e9e1d6;}
+  .band-ink h2,.band-ink h3{color:#fff;}
+  .head{max-width:60ch;margin-bottom:40px;}
+  .head h2{font-size:clamp(2.1rem,4.4vw,3.1rem);margin-top:12px;}
+  .head h2 em{color:var(--brass);}
+  .band-ink .head h2 em{color:var(--brass-lt);}
+  .head p{margin-top:20px;color:var(--stone);}
+  .band-ink .head p{color:#c5bcae;}
+
+  .lead{max-width:62ch;color:var(--stone);font-size:1.05rem;}
+  .band-ink .lead{color:#d8cfc1;}
+  .band-ink .lead strong{color:#fff;font-weight:400;}
+  .band-ink.centered .head{max-width:none;text-align:center;}
+  .band-ink.centered .head .eyebrow{justify-content:center;}
+  .band-ink.centered .head .rule{margin-left:auto;margin-right:auto;}
+  .band-ink.centered .lead{max-width:62ch;margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* numbered service cards */
+  .svcs{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .svc{background:var(--white);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 38px 34px;display:flex;flex-direction:column;position:relative;}
+  .svc .no{font-family:var(--serif);font-weight:300;font-size:1.6rem;color:var(--brass);letter-spacing:.04em;}
+  .svc h3{font-size:1.85rem;margin:6px 0 2px;}
+  .svc .price{font-family:var(--serif);font-size:1.5rem;color:var(--brass);margin:2px 0 14px;}
+  .svc .price small{display:block;font-family:var(--sans);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--stone-2);margin-top:4px;}
+  .svc p{margin:0;color:var(--stone);font-size:.98rem;}
+  .svc.feat{background:var(--ink);}
+  .svc.feat .no,.svc.feat .price{color:var(--brass-lt);}
+  .svc.feat h3{color:#fff;}
+  .svc.feat p{color:#cbc2b4;}
+  .svc.feat .flag{position:absolute;top:0;right:0;background:var(--brass);color:#fff;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:7px 13px;}
+  @media(max-width:720px){.svcs{grid-template-columns:1fr;}}
+  .after-note{margin-top:26px;font-size:.95rem;color:var(--stone);}
+
+  /* why — columns with brass top rule */
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;}
+  .why .it{padding-top:22px;border-top:2px solid var(--brass);}
+  .why h3{font-size:1.45rem;margin-bottom:10px;}
+  .why p{margin:0;color:var(--stone);font-size:.96rem;}
+  @media(max-width:820px){.why{grid-template-columns:repeat(2,1fr);gap:30px 28px;}}
+  @media(max-width:460px){.why{grid-template-columns:1fr;}}
+
+  /* process steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+  .step{position:relative;padding-top:58px;}
+  .step .no{position:absolute;top:0;left:0;font-family:var(--serif);font-weight:300;font-size:3rem;color:var(--brass);line-height:.8;}
+  .step h3{font-size:1.3rem;margin-bottom:8px;}
+  .step p{margin:0;color:var(--stone);font-size:.95rem;}
+  @media(max-width:820px){.steps{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:460px){.steps{grid-template-columns:1fr;}}
+
+  /* service area (home-matched layout) */
+  .area .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:stretch;}
+  .area .sub{color:var(--stone);font-size:18px;max-width:620px;margin-top:18px;}
+  .area .cities{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border-top:1px solid var(--line);}
+  .area .city{padding:20px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;}
+  .area .city:nth-child(odd){padding-right:20px;border-right:1px solid var(--line);}
+  .area .city:nth-child(even){padding-left:24px;}
+  .area .city b{display:block;font-family:var(--serif);font-weight:500;font-size:23px;line-height:1.1;transition:color .2s;}
+  .area .city small{display:block;font-size:12px;color:var(--stone);letter-spacing:.04em;}
+  .area .city:hover b{color:var(--brass);}
+  .area .mapbox{position:relative;min-height:560px;background:var(--sand);border:1px solid var(--line);}
+  .area .mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05) brightness(1.02);}
+  .area .mapcard{position:absolute;z-index:2;left:24px;bottom:24px;background:var(--white);padding:26px 28px;box-shadow:0 18px 40px rgba(22,20,18,.18);max-width:320px;}
+  .area .mapcard b{font-family:var(--serif);font-size:24px;font-weight:500;display:block;line-height:1.15;}
+  .area .mapcard p{font-size:14.5px;color:var(--stone);margin:8px 0 14px;}
+  .area .mapcard a{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--brass);text-decoration:none;}
+  .area .mapcard a:hover{text-decoration:underline;text-underline-offset:3px;}
+  @media(max-width:1180px){.area .grid{gap:56px;}}
+  @media(max-width:900px){.area .grid{grid-template-columns:1fr;}.area .mapbox{min-height:420px;}.area .cities{grid-template-columns:1fr;}.area .city:nth-child(odd){border-right:0;padding-right:0;}.area .city:nth-child(even){padding-left:0;}}
+
+  /* FAQ */
+  .faq{max-width:900px;}
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq summary{cursor:pointer;list-style:none;padding:22px 44px 22px 0;position:relative;font-family:var(--serif);font-size:1.5rem;color:var(--ink);}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:22px;font-family:var(--sans);font-weight:300;font-size:1.5rem;color:var(--brass);}
+  .faq details[open] summary::after{content:"–";}
+  .faq .ans{padding:0 44px 24px 0;color:var(--stone);}
+  .faq .ans p{margin:0;}
+
+  /* CTA band */
+  .cta-band{text-align:center;}
+  .cta-band h2{font-size:clamp(2.3rem,5vw,3.4rem);}
+  .cta-band h2 em{color:var(--brass-lt);}
+  .cta-band p{color:#cbc2b4;max-width:52ch;margin:18px auto 0;}
+  .cta-band .acts{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px;}
+  .cta-band .hours{margin-top:30px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-2);}
+  .cta-band .hours b{color:var(--brass-lt);font-weight:400;}
+
+  /* split (text + photo) */
+  .split{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;}
+  .split .approach-img{display:block;width:100%;max-width:440px;height:auto;justify-self:center;border:1px solid var(--line);}
+  .split .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;}
+  @media(max-width:820px){.split{grid-template-columns:1fr;gap:34px;}.split .photo{aspect-ratio:4/5;}}
+
+  /* photo slot variants */
+  .photo.v2{background:linear-gradient(150deg,#e7dcc8,#f4ede2 60%,#ecd9c0);}
+  .photo.v3{background:linear-gradient(200deg,#eadfce,#f6f0e7 55%,#e6d6bf);}
+  .photo.v4{background:linear-gradient(130deg,#e3d6bf,#f1e8db);}
+
+  /* gallery strip */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .gtile{aspect-ratio:3/4;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+  .gtile::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 0,rgba(140,109,67,.1),transparent 60%);}
+  .gtile .ph-tag{background:rgba(22,20,18,.82);}
+  @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr);}}
+
+  /* wide image band */
+  .wideband{height:clamp(240px,38vw,440px);background:linear-gradient(150deg,#2e2a26,#161412 60%),linear-gradient(90deg,rgba(140,109,67,.25),transparent);position:relative;display:flex;align-items:center;justify-content:center;border-block:1px solid var(--ink-3);}
+  .wideband span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--stone-2);}
+
+  /* mid-page CTA band (brass) */
+  .midcta{background:linear-gradient(90deg,var(--brass),#7a5e38);color:#fff;}
+  .midcta .in{max-width:var(--wrap);margin:0 auto;padding:40px 28px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+  .midcta .t{max-width:60ch;}
+  .midcta .t .k{font-size:11.5px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.72);}
+  .midcta .t h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.2vw,2.3rem);color:#fff;margin:6px 0 0;}
+  .midcta .acts{display:flex;gap:14px;flex-wrap:wrap;flex:none;}
+  .midcta .btn{background:#fff;color:var(--ink);border-color:#fff;}
+  .midcta .btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .midcta .btn.alt{background:transparent;color:#fff;border-color:rgba(255,255,255,.55);}
+  .midcta .btn.alt:hover{background:#fff;color:var(--brass);border-color:#fff;}
+
+  /* ===== our stylists + reviews (from new-home) ===== */
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px;}
+  .sub{color:var(--stone);font-size:18px;max-width:620px;margin-top:18px;}
+  .btn .arr{font-size:16px;letter-spacing:0;}
+  .team .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:26px;margin-top:64px;}
+  .member .pic{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--sand);}
+  .member .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .6s;display:block;}
+  .member:hover .pic img{transform:scale(1.04);}
+  .member .pic .tag{position:absolute;left:0;bottom:0;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:8px 14px;}
+  .member h3{font-size:28px;margin-top:20px;}
+  .member .role{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-top:6px;}
+  .member p{font-size:14.5px;color:var(--stone);margin-top:12px;line-height:1.6;}
+  .team .mother{margin-top:70px;display:grid;grid-template-columns:1.2fr 1fr;background:var(--ivory);border:1px solid var(--line);overflow:hidden;}
+  .team .mother img{width:100%;height:100%;object-fit:cover;max-height:520px;object-position:50% 45%;display:block;}
+  .team .mother .txt{padding:64px 60px;display:flex;flex-direction:column;justify-content:center;}
+  .team .mother h3{font-size:42px;margin-top:16px;}
+  .team .mother p{color:var(--stone);margin-top:18px;}
+  .reviews{background:var(--sand);}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px;}
+  .rev{background:var(--white);padding:44px 38px 36px;display:flex;flex-direction:column;position:relative;}
+  .rev .q{font-family:var(--serif);font-size:90px;line-height:.6;color:var(--brass-lt);height:40px;}
+  .rev p{font-family:var(--serif);font-size:23px;line-height:1.45;flex:1;margin-top:14px;color:var(--ink);}
+  .rev .who{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;letter-spacing:.16em;text-transform:uppercase;}
+  .rev .who b{color:var(--ink);font-weight:500;}
+  .rev .who span{color:var(--stone);}
+  .rev .who .stars{color:var(--brass);letter-spacing:3px;}
+  @media(max-width:1180px){.team .grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:900px){.team .grid{grid-template-columns:1fr 1fr;gap:28px 18px;}.member h3{font-size:24px;}.team .mother{grid-template-columns:1fr;}.team .mother .txt{padding:40px 28px;}.team .mother h3{font-size:34px;}.rev-grid{grid-template-columns:1fr;}.head-row{flex-direction:column;align-items:flex-start;margin-bottom:44px;gap:24px;}}
+
+  .ph-tag{z-index:3;}
+  .photo,.gtile,.wideband{background-size:cover;background-position:center;background-repeat:no-repeat;}
+
+  /* ===== sophistication layer ===== */
+  /* inset champagne frames on imagery */
+  .approach-img{outline:1px solid rgba(201,175,134,.45);outline-offset:-11px;box-shadow:0 34px 60px -44px rgba(22,20,18,.5);}
+  .gtile{overflow:hidden;}
+  .gtile::after,.pic::after{content:"";position:absolute;inset:13px;border:1px solid rgba(201,175,134,.55);pointer-events:none;z-index:3;opacity:0;transition:opacity .45s cubic-bezier(.2,.7,.2,1),inset .45s cubic-bezier(.2,.7,.2,1);}
+  .gtile:hover::after,.pic:hover::after{opacity:1;inset:11px;}
+  .pic:hover img{transform:scale(1.05);}
+  .wideband{position:relative;}
+  .wideband::after{content:"";position:absolute;inset:22px;border:1px solid rgba(201,175,134,.32);pointer-events:none;}
+  /* editorial drop cap on the opening paragraph */
+  #approach p:first-of-type::first-letter{font-family:var(--serif);font-weight:500;font-size:3.3em;line-height:.78;float:left;margin:8px 12px -2px 0;color:var(--brass);}
+  .trustbar{background:var(--white);border-bottom:1px solid var(--line);}
+  .trustbar .in{max-width:var(--wrap);margin:0 auto;padding:15px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;font-size:13.5px;letter-spacing:.02em;color:var(--stone);}
+  .trustbar .stars{color:var(--brass);letter-spacing:2px;}
+  .trustbar .sep{color:var(--line);}
+  .trustbar a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:1px;}
+  .trustbar a:hover{color:var(--brass);}
+  @media(max-width:600px){.trustbar .sep{display:none;}.trustbar .in{padding:14px 20px;}}
+
+.svc:not(.feat) .price small{color:#6E655B;}
+  @media(max-width:600px){.acts{flex:1 1 100%;min-width:0;max-width:100%}.acts .btn{white-space:normal;text-align:center;max-width:100%}}
+
+  /* ===== GALLERY page ===== */
+  .hero.gal-hero{background:linear-gradient(90deg,rgba(13,11,9,.93) 0%,rgba(15,13,11,.74) 50%,rgba(15,13,11,.42) 100%),url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-3.jpg') center 45%/cover no-repeat;min-height:520px;}
+  .gf{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px;}
+  .gf button{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:12px 20px;background:transparent;color:var(--ink);border:1px solid var(--line);cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+  .gf button:hover{border-color:var(--ink);}
+  .gf button.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .mason{columns:3;column-gap:16px;}
+  @media(max-width:720px){.mason{columns:2;column-gap:10px;}.gi{margin-bottom:10px;}.gi figcaption{font-size:10px;padding:24px 10px 9px;letter-spacing:.14em;}}
+  .gi{break-inside:avoid;margin:0 0 16px;position:relative;overflow:hidden;cursor:zoom-in;background:var(--sand);display:block;border:0;padding:0;width:100%;}
+  .gi img{width:100%;height:auto;display:block;transition:transform .6s;}
+  .gi:hover img{transform:scale(1.03);}
+  .gi figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(22,20,18,.78));color:#fff;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-align:left;opacity:0;transition:opacity .3s;}
+  .gi:hover figcaption,.gi:focus-visible figcaption{opacity:1;}
+  .gi.hide{display:none;}
+  @media(hover:none){.gi figcaption{opacity:1;}}
+  .gnote{margin-top:10px;font-size:14px;color:var(--stone);}
+  /* instagram */
+  .ig-h2{font-size:clamp(2.1rem,4.4vw,3.1rem);margin-top:12px;}
+  .ig-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px;}
+  .ig-handle{font-family:var(--serif);font-size:clamp(26px,3vw,36px);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass-lt);}
+  .ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+  .ig-grid a{position:relative;aspect-ratio:1/1;overflow:hidden;display:block;background:var(--sand);}
+  .ig-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s,opacity .3s;}
+  .ig-grid a:hover img{transform:scale(1.05);opacity:.85;}
+  .ig-grid a::after{content:"";position:absolute;right:10px;top:10px;width:18px;height:18px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Crect x='3' y='3' width='18' height='18' rx='5'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Ccircle cx='17.5' cy='6.5' r='1' fill='white'/%3E%3C/svg%3E");opacity:.9;}
+  .ig-flag{display:inline-block;margin-top:18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);border:1px dashed var(--brass-lt);padding:8px 14px;}
+  @media(max-width:900px){.ig-grid{grid-template-columns:repeat(3,1fr);}}
+  /* space strip */
+  .space{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;}
+  .space .ph{min-height:320px;background-size:cover;background-position:center;}
+  .space .ph:first-child{grid-row:span 2;min-height:660px;}
+  @media(max-width:820px){.space{grid-template-columns:1fr 1fr;}.space .ph:first-child{grid-column:1/-1;grid-row:auto;min-height:340px;}.space .ph{min-height:220px;}}
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:200;background:rgba(14,12,10,.94);display:none;align-items:center;justify-content:center;padding:60px 70px;}
+  .lb.open{display:flex;}
+  .lb img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+  .lb .cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:#e9e1d6;font-size:12px;letter-spacing:.2em;text-transform:uppercase;}
+  .lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:12px 16px;line-height:1;}
+  .lb .x{top:14px;right:18px;}.lb .pv{left:10px;top:50%;transform:translateY(-50%);}.lb .nx{right:10px;top:50%;transform:translateY(-50%);}
+  @media(max-width:600px){.lb{padding:56px 12px;}.lb .pv,.lb .nx{top:auto;bottom:10px;transform:none;}}
+</style>
+</head><body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="arcTop" d="M 22,60 A 38,38 0 0 1 98,60"/>
+    <path id="arcBot" d="M 20,60 A 40,40 0 0 0 100,60"/>
+  </defs>
+  <symbol id="emblem" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="60" cy="60" r="49.5" fill="none" stroke="currentColor" stroke-width=".8"/>
+    <text font-family="Jost,Arial,sans-serif" font-size="10.5" font-weight="500" letter-spacing="3.2" fill="currentColor"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">DUALITY</textPath></text>
+    <text font-family="Jost,Arial,sans-serif" font-size="8.5" font-weight="500" letter-spacing="2.6" fill="currentColor" dy="7"><textPath href="#arcBot" startOffset="50%" text-anchor="middle" side="right">EST. 2020</textPath></text>
+    <text x="60" y="80" font-family="'Cormorant Garamond',Georgia,serif" font-size="56" font-weight="500" text-anchor="middle" fill="currentColor">D</text>
+  </symbol>
+</svg>
+
+<header class="hero gal-hero">
+  <span class="hero-vlabel">Duality Salon &middot; Williamsville, NY</span>
+  <div class="wrap">
+    <div class="in">
+      <span class="eyebrow lt">Gallery &middot; Williamsville, NY</span>
+      <h1>Our <em>work</em></h1>
+      <hr class="rule">
+      <p class="lede">Color, cuts, curls, and the occasional bold vivid, all done in our Williamsville salon. Browse a few favorites below, then follow along on Instagram for what is new in the chair each week.</p>
+      <div class="acts">
+        <a class="btn btn-light" href="https://login.meevo.com/DualitySalonBuffalo/ob?locationId=105068" target="_blank" rel="noopener">Book Your Visit &rarr;</a>
+        <a class="btn btn-ghost-lt" href="#instagram">Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- GLOBAL:trustbar START -->
+<div class="trustbar"><div class="in">
+  <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+  <span>Loved by Williamsville families</span>
+  <span class="sep">&middot;</span>
+  <span>Mother-daughter owned since 2020</span>
+  <a href="https://www.google.com/maps/search/?api=1&query=Duality+Salon+1606+Hopkins+Rd+Williamsville+NY" target="_blank" rel="noopener">Read our Google reviews &rarr;</a>
+</div></div>
+<!-- GLOBAL:trustbar END -->
+
+<section id="work" class="band-white">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The book</span>
+      <h2>Real clients, <em>real results</em></h2>
+      <hr class="rule">
+      <p>Every photo here is a Duality client. Tap any image to see it larger, or filter by the service you are thinking about.</p>
+    </div>
+    <div class="gf" role="group" aria-label="Filter the gallery"><button type="button" data-f="all" class="on" aria-pressed="true">All work</button><button type="button" data-f="color" aria-pressed="false">Color</button><button type="button" data-f="cuts" aria-pressed="false">Cuts</button><button type="button" data-f="curls" aria-pressed="false">Curls</button><button type="button" data-f="vivid" aria-pressed="false">Vivid</button><button type="button" data-f="styling" aria-pressed="false">Styling</button></div>
+    <div class="mason" id="mason">
+      <button type="button" class="gi" data-cat="color" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-232e4-768x1024.jpg" data-cap="Dimensional color"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-232e4-768x1024.jpg" alt="Long waves with blonde and violet dimensional color at Duality Salon in Williamsville, NY" loading="lazy"><figcaption>Dimensional color</figcaption></button>
+      <button type="button" class="gi" data-cat="vivid" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0634-768x1024.jpg" data-cap="Vivid color"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0634-768x1024.jpg" alt="Blonde bob with teal and blue vivid color on the ends" loading="lazy"><figcaption>Vivid color</figcaption></button>
+      <button type="button" class="gi" data-cat="styling" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-2009i-768x1024.jpg" data-cap="Braided updo"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-2009i-768x1024.jpg" alt="Braided updo styled at Duality Salon" loading="lazy"><figcaption>Braided updo</figcaption></button>
+      <button type="button" class="gi" data-cat="color" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-3334r-1024x683.jpg" data-cap="Copper bob"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-3334r-768x512.jpg" alt="Rich copper color on a rounded bob" loading="lazy"><figcaption>Copper bob</figcaption></button>
+      <button type="button" class="gi" data-cat="cuts" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-2378-768x1024.jpg" data-cap="Blonde bob"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-2378-768x1024.jpg" alt="Soft blonde bob haircut, back view" loading="lazy"><figcaption>Blonde bob</figcaption></button>
+      <button type="button" class="gi" data-cat="curls" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-marianna-portrait-614x1024.jpg" data-cap="Curly styling"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-marianna-portrait-768x1280.jpg" alt="Duality stylist styling a client's curly hair" loading="lazy"><figcaption>Curly styling</figcaption></button>
+      <button type="button" class="gi" data-cat="curls" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-33327j-1024x683.jpg" data-cap="Blonde curls"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-33327j-768x512.jpg" alt="Defined blonde curls after a curly cut and style" loading="lazy"><figcaption>Blonde curls</figcaption></button>
+      <button type="button" class="gi" data-cat="color" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0300-768x1024.jpg" data-cap="Caramel waves"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0300-768x1024.jpg" alt="Long caramel brown waves" loading="lazy"><figcaption>Caramel waves</figcaption></button>
+      <button type="button" class="gi" data-cat="cuts" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-5998u.jpg" data-cap="Two-tone bob"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-5998u-768x512.jpg" alt="Short two-tone bob with an undercut" loading="lazy"><figcaption>Two-tone bob</figcaption></button>
+      <button type="button" class="gi" data-cat="color" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0338-768x1024.jpg" data-cap="Long blonde"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0338-768x1024.jpg" alt="Long, straight blonde color with a glossy finish" loading="lazy"><figcaption>Long blonde</figcaption></button>
+      <button type="button" class="gi" data-cat="cuts" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/297DCBF1--819x1024.jpg" data-cap="Kids' cut"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/297DCBF1--768x960.jpg" alt="A smiling boy after his kids' haircut at Duality Salon" loading="lazy"><figcaption>Kids' cut</figcaption></button>
+      <button type="button" class="gi" data-cat="color" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-3998l-1024x683.jpg" data-cap="Glossy brunette"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-3998l-768x512.jpg" alt="Long glossy brunette color, back view" loading="lazy"><figcaption>Glossy brunette</figcaption></button>
+      <button type="button" class="gi" data-cat="curls" data-full="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-marianna-2-1024x683.jpg" data-cap="In the chair"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-marianna-2-768x512.jpg" alt="Stylist Marianna styling curly hair at Duality Salon" loading="lazy"><figcaption>In the chair</figcaption></button>
+    </div>
+    <div class="acts" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
+      <a class="btn" href="https://login.meevo.com/DualitySalonBuffalo/ob?locationId=105068" target="_blank" rel="noopener">Book a Look Like This</a>
+      <a class="btn btn-ghost" href="https://dualitysalonbuffalo.com/services/">See Our Services &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="instagram" class="band-sand">
+  <div class="wrap">
+    <div class="ig-head">
+      <div>
+        <span class="eyebrow">On Instagram</span>
+        <h2 class="ig-h2">Fresh from <em>the chair</em></h2>
+      </div>
+      <a class="ig-handle" href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener">@dualitysalonbuffalo</a>
+    </div>
+    <div class="ig-grid">
+      <a href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0634-768x1024.jpg" alt="" loading="lazy"></a>
+      <a href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-232e4-768x1024.jpg" alt="" loading="lazy"></a>
+      <a href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-2009i-768x1024.jpg" alt="" loading="lazy"></a>
+      <a href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-33327j-768x512.jpg" alt="" loading="lazy"></a>
+      <a href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/Untitled-3334r-768x512.jpg" alt="" loading="lazy"></a>
+      <a href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="https://dualitysalonbuffalo.com/wp-content/uploads/2022/03/IMG_0300-768x1024.jpg" alt="" loading="lazy"></a>
+    </div>
+    <span class="ig-flag">Preview: this row becomes the live Instagram feed in WordPress</span>
+    <div class="acts" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
+      <a class="btn" href="https://www.instagram.com/dualitysalonbuffalo/" target="_blank" rel="noopener">Follow @dualitysalonbuffalo</a>
+    </div>
+  </div>
+</section>
+
+<section id="space" class="band-white">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The salon</span>
+      <h2>Where it <em>happens</em></h2>
+      <hr class="rule">
+      <p>A bright, relaxed space on Hopkins Road with plenty of natural light, which is exactly what you want when you are checking a new color.</p>
+    </div>
+    <div class="space">
+      <div class="ph" role="img" aria-label="Inside Duality Salon in Williamsville, NY" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-3-1024x683.jpg')"></div>
+      <div class="ph" role="img" aria-label="Styling stations at Duality Salon" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2020/11/salon--1024x683.jpg')"></div>
+      <div class="ph" role="img" aria-label="The reception desk at Duality Salon" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2023/02/Salon-plants-e1677258711662-960x1024.jpg')"></div>
+      <div class="ph" role="img" aria-label="Salon chairs and mirrors at Duality Salon" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2020/11/IMG_8096-683x1024.jpg')"></div>
+      <div class="ph" role="img" aria-label="Duality stylists in an in-salon education class" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-education-1024x683.jpg')"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL:reviews START -->
+<style>.reviews .rev-grid.rev-2{grid-template-columns:repeat(2,1fr);}@media(max-width:720px){.reviews .rev-grid.rev-2{grid-template-columns:1fr;}}</style>
+<section class="reviews">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow">Client Love</span>
+        <h2>What our clients <em>have to say</em></h2>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Duality+Salon+1606+Hopkins+Rd+Williamsville+NY" target="_blank" rel="noopener" class="btn btn-ghost">Read Our Google Reviews <span class="arr">&rarr;</span></a>
+    </div>
+    <div class="rev-grid rev-2">
+      <div class="rev">
+        <div class="q">&ldquo;</div>
+        <p>I had highlights and lowlights applied to my hair. I am overwhelmed with the beautiful results. My hair has so much shine and dimension. Sue is definitely a hair artist!</p>
+        <div class="who"><div><b>Gale</b> <span>&middot; Williamsville</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+      </div>
+      <div class="rev">
+        <div class="q">&ldquo;</div>
+        <p>I told Leah &ldquo;Do what you want with this mess and have fun with it.&rdquo; She did a wonderful job and did not disappoint.</p>
+        <div class="who"><div><b>Kristy</b> <span>&middot; Tonawanda</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- GLOBAL:reviews END -->
+
+<section id="book" class="band-ink on-dark cta-band">
+  <div class="wrap">
+    <span class="eyebrow" style="margin-bottom:4px;">Book your visit</span>
+    <h2>Saw something <em>you love</em>?</h2>
+    <p>Save the photo and bring it to your appointment. Call or text, or book online.</p>
+    <div class="acts">
+      <a class="btn btn-light" href="tel:17169988528">Call or text 716 998 8528</a>
+      <a class="btn btn-ghost-lt" href="https://login.meevo.com/DualitySalonBuffalo/ob?locationId=105068" target="_blank" rel="noopener">Book online &rarr;</a>
+    </div>
+    <p class="hours"><b>Wed &amp; Thu</b> 10am to 8pm &nbsp;·&nbsp; <b>Fri</b> 9am to 5pm &nbsp;·&nbsp; <b>Sat</b> 9am to 3pm &nbsp;·&nbsp; 1606 Hopkins Road, Williamsville</p>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Gallery image">
+  <button class="x" type="button" aria-label="Close">&times;</button>
+  <button class="pv" type="button" aria-label="Previous">&#8249;</button>
+  <img alt="">
+  <button class="nx" type="button" aria-label="Next">&#8250;</button>
+  <div class="cap"></div>
+</div>
+
+<script>
+(function(){
+  var tiles=[].slice.call(document.querySelectorAll('.gi'));
+  document.querySelectorAll('.gf button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-f');
+      document.querySelectorAll('.gf button').forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});
+      tiles.forEach(function(t){t.classList.toggle('hide',f!=='all'&&t.getAttribute('data-cat')!==f);});
+    });
+  });
+  var lb=document.getElementById('lb'),img=lb.querySelector('img'),cap=lb.querySelector('.cap'),cur=0;
+  function vis(){return tiles.filter(function(t){return !t.classList.contains('hide');});}
+  function show(i){var v=vis();cur=(i+v.length)%v.length;var t=v[cur];img.src=t.getAttribute('data-full');img.alt=t.querySelector('img').alt;cap.textContent=t.getAttribute('data-cap');}
+  tiles.forEach(function(t){t.addEventListener('click',function(){show(vis().indexOf(t));lb.classList.add('open');document.body.style.overflow='hidden';});});
+  function close(){lb.classList.remove('open');document.body.style.overflow='';}
+  lb.querySelector('.x').addEventListener('click',close);
+  lb.querySelector('.pv').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
+  lb.querySelector('.nx').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+})();
+</script>
+</body></html>
