@@ -587,7 +587,7 @@
   </div>
   <script>(function(d,s,id){var js;if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;js.src="https://embedsocial.com/cdn/ht.js";d.getElementsByTagName("head")[0].appendChild(js);}(document,"script","EmbedSocialHashtagScript"));</script>
   <script>(function(){var sc=document.querySelector('.igx-scroll');if(!sc)return;var scr=sc.parentNode,bar=scr.querySelector('.igx-rail i'),btn=scr.querySelector('.igx-hint');
-  function upd(){var max=sc.scrollHeight-sc.clientHeight;if(max<=0)return;var r=sc.scrollTop/max,h=Math.max(10,Math.min(60,sc.clientHeight/sc.scrollHeight*100));bar.style.height=h+'%';bar.style.transform='translateY('+(r*(100/h*100-100))+'%)';if(sc.scrollTop>40)scr.classList.add('is-scrolled');}
+  function upd(){var max=sc.scrollHeight-sc.clientHeight;if(max<=0)return;var r=sc.scrollTop/max,h=Math.max(10,Math.min(60,sc.clientHeight/sc.scrollHeight*100));bar.style.height=h+'%';bar.style.transform='translateY('+(r*(100/h*100-100))+'%)';scr.classList.toggle('is-scrolled',sc.scrollTop>40);}
   sc.addEventListener('scroll',upd,{passive:true});setInterval(upd,1500);
   btn.addEventListener('click',function(){sc.scrollBy({top:sc.clientHeight*0.8,behavior:'smooth'});});})();</script>
 </section>
