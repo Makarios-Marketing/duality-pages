@@ -319,6 +319,7 @@
   @media(max-width:600px){.trustbar .sep{display:none;}.trustbar .in{padding:14px 20px;}}
 
 .svc:not(.feat) .price small{color:#6E655B;}
+  @media(max-width:600px){.acts{flex:1 1 100%;min-width:0;max-width:100%}.acts .btn{white-space:normal;text-align:center;max-width:100%}}
 </style>
 </head><body>
 
@@ -400,7 +401,7 @@
       <span class="eyebrow">Our services</span>
       <h2>Haircuts for the whole family</h2>
       <hr class="rule">
-      <p>Cuts start at $40, or $60 finished with a shampoo and blowdry style. Not sure what will suit you? We will talk it through first.</p>
+      <p>Haircuts are $40 (no blow-dry style) or $60 (with blow-dry style). Not sure what will suit you? We will talk it through first.</p>
     </div>
     <div class="svcs">
       <div class="svc feat">
@@ -414,7 +415,7 @@
         <span class="no">02</span>
         <h3>Haircut with Shampoo</h3>
         <div class="price tnum">from $40 <small>cut &amp; shampoo</small></div>
-        <p>A precision cut shaped to your texture, length, and the way you actually wear your hair, finished with a relaxing shampoo. Add a blow-dry style any time you want to see the full finish.</p>
+        <p>A precision cut shaped to your texture, length, and the way you actually wear your hair, finished with a relaxing shampoo. A blow-dry style can be added for an additional charge.</p>
       </div>
       <div class="svc">
         <span class="no">03</span>
@@ -489,7 +490,7 @@
     </div>
     <div class="gallery">
       <div class="gtile" role="img" aria-label="Duality Salon stylists at the reception desk in Williamsville, NY" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-2.jpg'),linear-gradient(160deg,#efe6d8,#e9ddca);"><span class="ph-tag">Our stylists</span></div>
-      <div class="gtile" role="img" aria-label="Darcy, stylist at Duality Salon" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-darcy.jpg'),linear-gradient(150deg,#e7dcc8,#ecd9c0);"><span class="ph-tag">Meet the team</span></div>
+      <div class="gtile" role="img" aria-label="Darcy, stylist at Duality Salon" style="background-position:50% 15%;background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-darcy.jpg'),linear-gradient(150deg,#e7dcc8,#ecd9c0);"><span class="ph-tag">Meet the team</span></div>
       <div class="gtile" role="img" aria-label="A stylist seated in the salon chair at Duality Salon in Williamsville" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-leah.jpg'),linear-gradient(200deg,#eadfce,#e6d6bf);"><span class="ph-tag">In the chair</span></div>
       <div class="gtile" role="img" aria-label="Mother-daughter owners Sue and Leah at Duality Salon" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-sue-leah.jpg'),linear-gradient(130deg,#e3d6bf,#f1e8db);"><span class="ph-tag">The owners</span></div>
     </div>
@@ -515,7 +516,7 @@
         <div class="pic"><img alt="Sue Dicky, stylist at Duality Salon" loading="lazy" src="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-sue.jpg"><span class="tag">40 years</span></div>
         <h3>Sue Dicky</h3>
         <div class="role">Artistic Director</div>
-        <p>Sue brings 40 years behind the chair and a passion for mentoring her team. She spent many years as an education manager for a major hair care company, training the educators who taught stylists across the East Coast.</p>
+        <p>Sue brings 40 years behind the chair and a passion for mentoring her team. She spent many years as an education manager for a major hair care company, overseeing roughly 140 educators across the entire United States and Canada.</p>
       </div>
       <div class="member">
         <div class="pic"><img alt="Leah Blachaniec, owner of Duality Salon" loading="lazy" src="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-leah.jpg"><span class="tag">Since 2013</span></div>
@@ -559,7 +560,7 @@
   <div class="wrap">
     <div class="head" style="margin-bottom:26px;">
       <span class="eyebrow">Western New York</span>
-      <h2>Haircuts that hold up through a <em>Buffalo winter</em></h2>
+      <h2>Haircuts that hold up through <em>Buffalo weather</em></h2>
       <hr class="rule">
     </div>
     <p class="lead">A cut has to survive the season here. From November on you are in and out of <strong>hats and hoods</strong>, and the <strong>dry indoor heat</strong> leaves ends rough and flat, so a shape that grows out gracefully matters more than a style that only looks right the day you leave. In the humid stretch of a Buffalo summer, the same thinking applies the other way, with cuts that still behave when the air is heavy off the lake. We cut with all of it in mind, so your haircut works in real Williamsville weather, not just in the chair.</p>
@@ -646,6 +647,7 @@
 </section>
 
 <!-- GLOBAL:reviews START -->
+<style>.reviews .rev-grid.rev-2{grid-template-columns:repeat(2,1fr);}@media(max-width:720px){.reviews .rev-grid.rev-2{grid-template-columns:1fr;}}</style>
 <section class="reviews">
   <div class="wrap">
     <div class="head-row">
@@ -655,28 +657,17 @@
       </div>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=Duality+Salon+1606+Hopkins+Rd+Williamsville+NY" target="_blank" rel="noopener" class="btn btn-ghost">Read Our Google Reviews <span class="arr">&rarr;</span></a>
     </div>
-    <div class="rev-grid">
+    <div class="rev-grid rev-2">
       <div class="rev">
         <div class="q">&ldquo;</div>
         <p>I had highlights and lowlights applied to my hair. I am overwhelmed with the beautiful results. My hair has so much shine and dimension. Sue is definitely a hair artist!</p>
         <div class="who"><div><b>Gale</b> <span>&middot; Williamsville</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
       </div>
-      <div class="rev">
-        <div class="q">&ldquo;</div>
-        <p>The hair extensions that Sue installed are beautiful. She did an amazing job.</p>
-        <div class="who"><div><b>Paula</b> <span>&middot; Williamsville</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-      </div>
-      <div class="rev">
-        <div class="q">&ldquo;</div>
-        <p>I told Leah &ldquo;Do what you want with this mess and have fun with it.&rdquo; She did a wonderful job and did not disappoint.</p>
-        <div class="who"><div><b>Kristy</b> <span>&middot; Tonawanda</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-      </div>
-    </div>
   </div>
 </section>
 <!-- GLOBAL:reviews END -->
 
-<div class="wideband" role="img" aria-label="Inside Duality Salon in Williamsville, NY" style="background-image:linear-gradient(rgba(22,20,18,.3),rgba(22,20,18,.45)),url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-3.jpg');"></div>
+<div class="wideband" role="img" aria-label="Inside Duality Salon in Williamsville, NY" style="background-position:50% 44%;background-image:linear-gradient(rgba(22,20,18,.3),rgba(22,20,18,.45)),url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-3.jpg');"></div>
 
 <section id="book" class="band-ink on-dark cta-band">
   <div class="wrap">

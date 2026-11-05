@@ -328,6 +328,7 @@
   #approach .app-main{display:block;width:100%;height:580px;object-fit:cover;box-shadow:0 46px 84px -48px rgba(22,20,18,.52);outline:1px solid rgba(201,175,134,.5);outline-offset:-12px;}
   #approach .app-accent{position:absolute;right:-40px;bottom:-40px;width:238px;height:300px;object-fit:cover;object-position:50% 30%;border:7px solid var(--ivory);box-shadow:0 34px 56px -26px rgba(22,20,18,.55);}
   #approach .app-badge{position:absolute;top:30px;left:-18px;z-index:2;background:var(--ink);color:#fff;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;padding:13px 22px;}
+  @media(max-width:820px){#approach .split{grid-template-columns:1fr;gap:64px;}#approach .apptext{order:1;}#approach .appcollage{order:2;margin:0 16px 24px 0;}}
   @media(max-width:760px){#approach .split{gap:40px;}#approach .app-main{height:360px;}#approach .app-accent{width:150px;height:190px;right:-16px;bottom:-24px;}#approach .app-badge{left:0;}}
   /* why: two columns with left brass rule */
   #why .why{grid-template-columns:repeat(2,1fr);gap:42px 64px;}
@@ -408,6 +409,7 @@
     html.mo .btn .arr{display:inline-block;transition:transform .45s var(--mo-ease);}
     html.mo .btn:hover .arr{transform:translateX(5px);}
   }
+  @media(max-width:600px){.acts{flex:1 1 100%;min-width:0;max-width:100%}.acts .btn{white-space:normal;text-align:center;max-width:100%}}
 </style>
 <script>if(window.matchMedia&&matchMedia('(prefers-reduced-motion: no-preference)').matches){document.documentElement.classList.add('mo');setTimeout(function(){if(!window.__moReady)document.documentElement.classList.remove('mo');},3000);}</script>
 </head><body>
@@ -441,7 +443,7 @@
       </div>
       <div class="stats">
         <div><b>Custom Color</b><span>Made for You</span></div>
-        <div><b>Balayage &middot; Vivids</b><span>Highlights &middot; Gray</span></div>
+        <div><b>Balayage &middot; Vivids</b><span>Highlights &middot; Toner</span></div>
         <div><b>By Appt.</b><span>Wed &ndash; Sat</span></div>
       </div>
     </div>
@@ -452,7 +454,7 @@
   <div class="in">
     <span class="br">Color consult included</span>
     <span>Balayage, highlights &amp; <b>vivid color</b></span>
-    <span>Gray coverage &amp; root retouch</span>
+    <span>Root touch-up &amp; toner</span>
     <span>Color by <b>appointment</b></span>
   </div>
 </div>
@@ -502,7 +504,7 @@
         <span class="no">01</span>
         <h3>All-Over Color</h3>
         <div class="price tnum">from $100 <small>single-process, all-over</small></div>
-        <p>An even, all-over color to go darker, richer, or warmer, cover gray, or refresh a shade that has faded. We match it to your skin tone and finish with a toner if the shade needs fine-tuning.</p>
+        <p>An even, all-over color to go darker, richer, or warmer, or refresh a shade that has faded. We match it to your skin tone and finish with a toner if the shade needs fine-tuning.</p>
       </div>
       <div class="svc">
         <span class="no">02</span>
@@ -518,9 +520,15 @@
       </div>
       <div class="svc">
         <span class="no">04</span>
-        <h3>Gray Coverage &amp; Root Retouch</h3>
-        <div class="price tnum">retouch from $70 <small>blended or full coverage</small></div>
-        <p>Keep your color fresh between full appointments. We blend or fully cover gray at the root and refresh your shade, timed to how quickly your roots show.</p>
+        <h3>Root Touch-Up</h3>
+        <div class="price tnum">from $70 <small>refresh your new growth</small></div>
+        <p>Keep your color fresh between full appointments. We color your new growth at the root to match your shade, timed to how quickly your roots show.</p>
+      </div>
+      <div class="svc">
+        <span class="no">05</span>
+        <h3>Toner</h3>
+        <div class="price tnum">from $40 <small>shine &amp; tone refresh</small></div>
+        <p>A toner adds shine and brightens or deepens your existing color without changing the color itself. It is a quick refresh between color appointments that keeps your shade looking fresh.</p>
       </div>
     </div>
     <p class="after-note"><a href="https://dualitysalonbuffalo.com/services/">See our full service menu →</a></p>
@@ -583,7 +591,7 @@
     </div>
     <div class="gallery">
       <div class="gtile" role="img" aria-label="Duality Salon stylists at the reception desk in Williamsville, NY" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-2.jpg'),linear-gradient(160deg,#efe6d8,#e9ddca);"><span class="ph-tag">Our stylists</span></div>
-      <div class="gtile" role="img" aria-label="Darcy, stylist at Duality Salon" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-darcy.jpg'),linear-gradient(150deg,#e7dcc8,#ecd9c0);"><span class="ph-tag">Meet the team</span></div>
+      <div class="gtile" role="img" aria-label="Darcy, stylist at Duality Salon" style="background-position:50% 15%;background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-darcy.jpg'),linear-gradient(150deg,#e7dcc8,#ecd9c0);"><span class="ph-tag">Meet the team</span></div>
       <div class="gtile" role="img" aria-label="A stylist seated in the salon chair at Duality Salon in Williamsville" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-leah.jpg'),linear-gradient(200deg,#eadfce,#e6d6bf);"><span class="ph-tag">In the chair</span></div>
       <div class="gtile" role="img" aria-label="Mother-daughter owners Sue and Leah at Duality Salon" style="background-image:url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-sue-leah.jpg'),linear-gradient(130deg,#e3d6bf,#f1e8db);"><span class="ph-tag">The owners</span></div>
     </div>
@@ -609,7 +617,7 @@
         <div class="pic"><img alt="Sue Dicky, stylist at Duality Salon" loading="lazy" src="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-sue.jpg"><span class="tag">40 years</span></div>
         <h3>Sue Dicky</h3>
         <div class="role">Artistic Director</div>
-        <p>Sue brings 40 years behind the chair and a passion for mentoring her team. She spent many years as an education manager for a major hair care company, training the educators who taught stylists across the East Coast.</p>
+        <p>Sue brings 40 years behind the chair and a passion for mentoring her team. She spent many years as an education manager for a major hair care company, overseeing roughly 140 educators across the entire United States and Canada.</p>
       </div>
       <div class="member">
         <div class="pic"><img alt="Leah Blachaniec, owner of Duality Salon" loading="lazy" src="https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-leah.jpg"><span class="tag">Since 2013</span></div>
@@ -653,7 +661,7 @@
   <div class="wrap">
     <div class="head" style="margin-bottom:26px;">
       <span class="eyebrow">Western New York</span>
-      <h2>Color that stays rich through a <em>Buffalo winter</em></h2>
+      <h2>Color that stays rich through <em>Buffalo weather</em></h2>
       <hr class="rule">
     </div>
     <p class="lead">Color has to survive the season here. Western New York's <strong>hard water</strong> and the <strong>dry indoor heat</strong> from November on pull the shine and tone out of color fast, leaving blondes brassy and darker shades dull. In summer, sun and the humidity off the lake do their own fading. We mix and tone your color with all of it in mind, and send you home knowing how to protect it, so your color still looks rich in real Williamsville weather, not just the day you leave the chair.</p>
@@ -669,7 +677,7 @@
     </div>
     <div class="steps">
       <div class="step"><span class="no">01</span><h3>We consult</h3><p>We look at your hair's history and condition, talk through your goal and upkeep, and agree on a plan before anything goes on.</p></div>
-      <div class="step"><span class="no">02</span><h3>We formula &amp; apply</h3><p>We mix a color made for your hair and apply it with care, whether that is foils, hand-painting, or an all-over application.</p></div>
+      <div class="step"><span class="no">02</span><h3>We formulate &amp; apply</h3><p>We mix a color made for your hair and apply it with care, whether that is foils, hand-painting, or an all-over application.</p></div>
       <div class="step"><span class="no">03</span><h3>Process &amp; tone</h3><p>Your color develops, then we tone it if needed to get the shade just right before the final rinse.</p></div>
       <div class="step"><span class="no">04</span><h3>Blowout &amp; home care</h3><p>We blowdry and style you out, and send you home knowing exactly how to keep your color looking fresh.</p></div>
     </div>
@@ -720,8 +728,8 @@
         <div class="ans"><p>Yes. Our Williamsville stylists do balayage, foilyage, highlights, and lowlights, from a few face-framing pieces to a full head. We will help you pick the technique that fits the look and the upkeep you want.</p></div>
       </details>
       <details>
-        <summary>Can you cover gray?</summary>
-        <div class="ans"><p>Absolutely. We blend or fully cover gray and refresh your shade with a root retouch, starting at $70, timed to how quickly your roots show. We can go full coverage or a softer, lower-maintenance blend.</p></div>
+        <summary>What does a toner do?</summary>
+        <div class="ans"><p>A toner adds shine and brightens or deepens your existing color without changing the color itself. It is a quick refresh between color appointments, starting at $40.</p></div>
       </details>
       <details>
         <summary>Do you do vivid or fashion colors?</summary>
@@ -740,6 +748,7 @@
 </section>
 
 <!-- GLOBAL:reviews START -->
+<style>.reviews .rev-grid.rev-2{grid-template-columns:repeat(2,1fr);}@media(max-width:720px){.reviews .rev-grid.rev-2{grid-template-columns:1fr;}}</style>
 <section class="reviews">
   <div class="wrap">
     <div class="head-row">
@@ -749,28 +758,17 @@
       </div>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=Duality+Salon+1606+Hopkins+Rd+Williamsville+NY" target="_blank" rel="noopener" class="btn btn-ghost">Read Our Google Reviews <span class="arr">&rarr;</span></a>
     </div>
-    <div class="rev-grid">
+    <div class="rev-grid rev-2">
       <div class="rev">
         <div class="q">&ldquo;</div>
         <p>I had highlights and lowlights applied to my hair. I am overwhelmed with the beautiful results. My hair has so much shine and dimension. Sue is definitely a hair artist!</p>
         <div class="who"><div><b>Gale</b> <span>&middot; Williamsville</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
       </div>
-      <div class="rev">
-        <div class="q">&ldquo;</div>
-        <p>The hair extensions that Sue installed are beautiful. She did an amazing job.</p>
-        <div class="who"><div><b>Paula</b> <span>&middot; Williamsville</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-      </div>
-      <div class="rev">
-        <div class="q">&ldquo;</div>
-        <p>I told Leah &ldquo;Do what you want with this mess and have fun with it.&rdquo; She did a wonderful job and did not disappoint.</p>
-        <div class="who"><div><b>Kristy</b> <span>&middot; Tonawanda</span></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-      </div>
-    </div>
   </div>
 </section>
 <!-- GLOBAL:reviews END -->
 
-<div class="wideband" role="img" aria-label="Inside Duality Salon in Williamsville, NY" style="background-image:linear-gradient(rgba(22,20,18,.3),rgba(22,20,18,.45)),url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-1.jpg');"></div>
+<div class="wideband" role="img" aria-label="Inside Duality Salon in Williamsville, NY" style="background-position:50% 44%;background-image:linear-gradient(rgba(22,20,18,.3),rgba(22,20,18,.45)),url('https://dualitysalonbuffalo.com/wp-content/uploads/2026/10/duality-salon-williamsville-group-1.jpg');"></div>
 
 <section id="book" class="band-ink on-dark cta-band">
   <div class="wrap">
@@ -871,10 +869,10 @@
     },
     {
      "@type": "Question",
-     "name": "Can you cover gray?",
+     "name": "What does a toner do?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Absolutely. We blend or fully cover gray and refresh your shade with a root retouch, starting at $70, timed to how quickly your roots show. We can go full coverage or a softer, lower-maintenance blend."
+      "text": "A toner adds shine and brightens or deepens your existing color without changing the color itself. It is a quick refresh between color appointments, starting at $40."
      }
     },
     {
