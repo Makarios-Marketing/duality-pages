@@ -231,7 +231,7 @@ section.apply{background:var(--dark);color:var(--cream)}
     <details open><summary>Do I need to bring my own clients?</summary><div class="fa">No. A full book is not required, though bringing some existing clients is a plus. We advertise to bring new clients through the door and help fill your chair, and we support you in growing a loyal book from there in a salon that people in Williamsville already know and trust.</div></details>
     <details><summary>Are stylists employees, and how does pay work?</summary><div class="fa">Our stylists are employees on a commission team. You earn an hourly wage while your book is still building, so your income is steady from day one, and we advertise to help keep your chair full. We also provide all the color and supplies you need, so you only bring your own personal tools like scissors, blow dryers, and curling irons.</div></details>
     <details><summary>Do you hire newly licensed stylists?</summary><div class="fa">This role is for fully licensed cosmetologists in New York State. If you are newly licensed and ready to grow, we would still love to meet you. Mentorship from our senior stylists is part of how we work here.</div></details>
-    <details><summary>What is the schedule like?</summary><div class="fa">We are open Monday through Saturday by appointment, and we protect your schedule rather than overbooking it, so you have the time to do your best work on every client.</div></details>
+    <details><summary>What is the schedule like?</summary><div class="fa">We are open Tuesday through Saturday, with Tuesdays by appointment, and we protect your schedule rather than overbooking it, so you have the time to do your best work on every client.</div></details>
     <details><summary>What happens after I apply?</summary><div class="fa">We reach out to set up a time to meet, show you around, and talk through the role. If it feels like a fit on both sides, we go from there.</div></details>
   </div>
 </div></section>
@@ -242,24 +242,24 @@ section.apply{background:var(--dark);color:var(--cream)}
       <span class="eyebrow">Apply</span>
       <h2>Join the <em>Duality</em> team</h2>
       <p>Send us a little about yourself and a link to your portfolio. If it feels like a fit, we will reach out to set up a time to meet and talk through the role.</p>
-      <div class="meta">Questions first?<br>Call (716) 998-8528<br>Mon through Sat, by appointment<br>1600 Hopkins Road, Williamsville, NY</div>
+      <div class="meta">Questions first?<br>Call (716) 998-8528<br>Tue by appointment &middot; Wed to Sat<br>1606 Hopkins Road, Williamsville, NY</div>
     </div>
-    <form class="form" onsubmit="return false">
+    <form class="form" id="dl-apply">
       <div class="frow">
-        <div class="field"><label>First Name</label><input type="text" placeholder="Your first name"></div>
-        <div class="field"><label>Last Name</label><input type="text" placeholder="Your last name"></div>
+        <div class="field"><label>First Name</label><input type="text" placeholder="Your first name" name="first" required></div>
+        <div class="field"><label>Last Name</label><input type="text" placeholder="Your last name" name="last" required></div>
       </div>
       <div class="frow">
-        <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
-        <div class="field"><label>Phone</label><input type="tel" placeholder="(716) 000-0000"></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@email.com" name="email" required></div>
+        <div class="field"><label>Phone</label><input type="tel" placeholder="(716) 000-0000" name="phone" required></div>
       </div>
       <div class="frow">
-        <div class="field"><label>Years of Experience</label><select><option>Select</option><option>Student / In school</option><option>Less than 2 years</option><option>2 to 5 years</option><option>5 to 10 years</option><option>10+ years</option></select></div>
-        <div class="field"><label>Portfolio / Instagram Link</label><input type="text" placeholder="instagram.com/yourwork"></div>
+        <div class="field"><label>Years of Experience</label><select name="years"><option>Select</option><option>Student / In school</option><option>Less than 2 years</option><option>2 to 5 years</option><option>5 to 10 years</option><option>10+ years</option></select></div>
+        <div class="field"><label>Portfolio / Instagram Link</label><input type="text" placeholder="instagram.com/yourwork" name="portfolio"></div>
       </div>
-      <div class="field"><label>Upload Your Portfolio (optional)</label><div class="upload">Drag a file here or click to upload &middot; PDF or images</div></div>
-      <div class="field"><label>Tell Us About Yourself</label><textarea placeholder="What do you love about the work, and why Duality?"></textarea></div>
-      <button class="btn btn-dark">Submit Application &rarr;</button>
+      
+      <div class="field"><label>Tell Us About Yourself</label><textarea name="about" placeholder="What do you love about the work, and why Duality?"></textarea></div>
+      <button type="submit" class="btn btn-dark">Send My Application &rarr;</button><p style="margin:14px 0 0;font-size:13px;opacity:.75">This opens your email app with your details filled in, addressed to info@dualitysalonbuffalo.com. Attach a few photos of your work if you like.</p>
     </form>
   </div>
 </div></section>
@@ -289,4 +289,4 @@ section.apply{background:var(--dark);color:var(--cream)}
   }else{els.forEach(function(el){el.classList.add('in');});}
 })();
 </script>
-</body></html>
+<script>(function(){var f=document.getElementById('dl-apply');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var v=function(n){var x=f.querySelector('[name="'+n+'"]');return x?x.value.trim():''};var name=(v('first')+' '+v('last')).trim();var body='Name: '+name+'\nEmail: '+v('email')+'\nPhone: '+v('phone')+'\nYears of experience: '+v('years')+'\nPortfolio / Instagram: '+v('portfolio')+'\n\nAbout me:\n'+v('about')+'\n\n(Feel free to attach photos of your work to this email.)';window.location.href='mailto:info@dualitysalonbuffalo.com?subject='+encodeURIComponent('Stylist application'+(name?' - '+name:''))+'&body='+encodeURIComponent(body);});})();</script></body></html>
